@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>初級中文閱讀教室</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <header class="page-head">
+    <h1 id="page-title" class="page-title"></h1>
+    <p id="page-subtitle" class="page-subtitle"></p>
+  </header>
+
+  <div class="toolbar" role="toolbar" aria-label="工具列">
+    <div class="sample-group">
+      <label id="article-label" for="article-select"></label>
+      <select id="article-select"></select>
+    </div>
+
+    <div class="size-group" role="group" aria-label="字級">
+      <span id="size-label" class="size-label"></span>
+      <button type="button" class="size-btn" data-size="sm">小</button>
+      <button type="button" class="size-btn" data-size="md">中</button>
+      <button type="button" class="size-btn" data-size="lg">大</button>
+    </div>
+
+    <div class="action-group">
+      <button id="btn-pinyin-toggle" type="button" class="tool-btn" aria-pressed="true"></button>
+    </div>
+  </div>
+
+  <section class="reading-section">
+    <div class="reading-head">
+      <span id="lesson-badge" class="lesson-badge"></span>
+      <h2 id="article-title" class="article-title"></h2>
+    </div>
+    <div id="article-output" class="article-output" aria-live="polite"></div>
+    <p id="output-placeholder" class="output-placeholder"></p>
+  </section>
+
+  <section id="grammar-section" class="grammar-section" hidden>
+    <h2 id="grammar-label" class="section-label"></h2>
+    <div class="grammar-card">
+      <div id="grammar-pattern" class="grammar-pattern"></div>
+      <div id="grammar-pattern-en" class="grammar-pattern-en"></div>
+      <p id="grammar-explanation" class="grammar-explanation"></p>
+      <p id="grammar-explanation-en" class="grammar-explanation-en"></p>
+      <div class="grammar-example-wrap">
+        <div id="grammar-example-label" class="vocab-example-label"></div>
+        <ol id="grammar-example-list" class="vocab-example-list"></ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="vocab-section">
+    <h2 id="vocab-label" class="section-label"></h2>
+    <div id="vocab-list" class="vocab-list"></div>
+  </section>
+
+</div>
+
+<script src="vendor/pinyin-pro.min.js"></script>
+<script src="pinyin.js"></script>
+<script src="articles.js"></script>
+<script src="prefs-store.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
