@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>初級中文閱讀教室</title>
+<title>中文閱讀教室</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -60,11 +60,18 @@
     <div id="vocab-list" class="vocab-list"></div>
   </section>
 
+  <section id="picture-section" class="picture-section" hidden>
+    <h2 id="picture-label" class="section-label"></h2>
+    <div id="picture-illustration" class="picture-illustration"></div>
+    <ol id="picture-questions" class="picture-questions"></ol>
+  </section>
+
 </div>
 
 <script src="vendor/pinyin-pro.min.js"></script>
 <script src="pinyin.js"></script>
 <script src="articles.js"></script>
+<script src="illustrations.js"></script>
 <script src="prefs-store.js"></script>
 <script src="app.js"></script>
 </body>

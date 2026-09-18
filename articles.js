@@ -59,6 +59,22 @@ const ARTICLES = [
         examples: ["明天幫你搬東西，沒問題！", "這件事交給我，沒問題的。"],
       },
     ],
+    pictureStory: {
+      questions: [
+        {
+          zh: "圖片裡有哪些人？他們在哪裡？",
+          en: "Who is in the picture? Where are they?",
+        },
+        {
+          zh: "現在是幾點？他們打算幾點見面？",
+          en: "What time is it now? What time do they plan to meet?",
+        },
+        {
+          zh: "用「要不要」問一問朋友，你們要不要一起做什麼？",
+          en: "Use “要不要” to ask a friend if they want to do something together.",
+        },
+      ],
+    },
     grammar: {
       pattern: "要不要＋VP？",
       patternEn: "yào bu yào + VP? — invitation / yes-no question",
@@ -122,6 +138,22 @@ const ARTICLES = [
         examples: ["這個遊戲很好玩，你也試試看。", "臺灣有很多好玩的地方。"],
       },
     ],
+    pictureStory: {
+      questions: [
+        {
+          zh: "他們要坐什麼交通工具去臺南？",
+          en: "What transportation are they taking to Tainan?",
+        },
+        {
+          zh: "高鐵和火車，哪一個比較快？哪一個比較便宜？用「比」說一句話。",
+          en: "Which is faster, HSR or the train? Which is cheaper? Use “比” to make a sentence.",
+        },
+        {
+          zh: "到了臺南以後，他們會先做什麼？再做什麼？",
+          en: "After arriving in Tainan, what will they do first? What next?",
+        },
+      ],
+    },
     grammar: {
       pattern: "A 比 B＋形容詞",
       patternEn: "A bǐ B + adjective — A is more [adj] than B",
@@ -186,6 +218,22 @@ const ARTICLES = [
         examples: ["祝你旅途愉快！", "今天的聚會大家都玩得很愉快。"],
       },
     ],
+    pictureStory: {
+      questions: [
+        {
+          zh: "圖片裡的人正在煩惱什麼？他還沒決定什麼事？",
+          en: "What is the person in the picture worrying about? What haven’t they decided yet?",
+        },
+        {
+          zh: "除了圖片裡的地方以外，你還想去哪裡玩？",
+          en: "Besides the places in the picture, where else would you like to go?",
+        },
+        {
+          zh: "用「打算」說一說你的暑假計畫。",
+          en: "Use “打算” to talk about your summer vacation plan.",
+        },
+      ],
+    },
     grammar: {
       pattern: "Subject＋打算＋VP",
       patternEn: "Subject + dǎsuàn (plan to) + VP",
@@ -250,6 +298,22 @@ const ARTICLES = [
         examples: ["這碗湯聞起來好香。", "剛煮好的白飯很香。"],
       },
     ],
+    pictureStory: {
+      questions: [
+        {
+          zh: "水果攤上有哪些水果？你認得幾種？",
+          en: "What fruits are on the stand? How many can you recognize?",
+        },
+        {
+          zh: "哪一種水果又甜又香？哪一種又酸又甜？",
+          en: "Which fruit is sweet and fragrant? Which one is sour and sweet?",
+        },
+        {
+          zh: "你最喜歡吃什麼水果？用「又...又...」形容它。",
+          en: "What fruit do you like best? Use “又...又...” to describe it.",
+        },
+      ],
+    },
     grammar: {
       pattern: "Subject＋又＋形容詞1＋又＋形容詞2",
       patternEn: "Subject + yòu + adj1 + yòu + adj2 — both [adj1] and [adj2]",

@@ -45,6 +45,7 @@ global.pinyinPro = require(path.join(__dirname, "..", "vendor", "pinyin-pro.min.
 const ZhPinyin = require(path.join(__dirname, "..", "pinyin.js"));
 const ZhPrefs = require(path.join(__dirname, "..", "prefs-store.js"));
 const { ARTICLES } = require(path.join(__dirname, "..", "articles.js"));
+const { ILLUSTRATIONS } = require(path.join(__dirname, "..", "illustrations.js"));
 
 console.log("== 拼音轉換 ==");
 
@@ -165,6 +166,36 @@ check("生字與例句、文法例句都能安全轉成拼音 HTML（不噴錯�
       v.examples.forEach((ex) => assert.ok(ZhPinyin.renderMarkup(ex).length > 0));
     });
     a.grammar.examples.forEach((ex) => assert.ok(ZhPinyin.renderMarkup(ex).length > 0));
+  });
+});
+
+console.log("== 看圖說故事 ==");
+
+check("每篇課文都有看圖說故事，至少 3 個引導問題，zh／en 皆非空", () => {
+  ARTICLES.forEach((a) => {
+    assert.ok(a.pictureStory && Array.isArray(a.pictureStory.questions), "缺少 pictureStory: " + a.id);
+    assert.ok(a.pictureStory.questions.length >= 3, "引導問題太少: " + a.id);
+    a.pictureStory.questions.forEach((q) => {
+      assert.ok(q.zh && q.zh.trim(), "缺少問題中文: " + a.id);
+      assert.ok(q.en && q.en.trim(), "缺少問題英文: " + a.id);
+    });
+  });
+});
+
+check("每篇課文都對應一張插畫，且插畫是合法的 <svg> 標記", () => {
+  ARTICLES.forEach((a) => {
+    const svg = ILLUSTRATIONS[a.id];
+    assert.ok(svg && svg.trim(), "缺少插畫: " + a.id);
+    assert.ok(svg.includes("<svg"), "插畫內容不是 svg: " + a.id);
+    assert.ok(svg.includes("</svg>"), "插畫內容缺少結尾標籤: " + a.id);
+  });
+});
+
+check("引導問題都能安全轉成拼音 HTML（不噴錯）", () => {
+  ARTICLES.forEach((a) => {
+    a.pictureStory.questions.forEach((q) => {
+      assert.ok(ZhPinyin.renderMarkup(q.zh).length > 0);
+    });
   });
 });
 

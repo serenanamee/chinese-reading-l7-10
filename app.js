@@ -13,6 +13,9 @@
   const sizeBtns = Array.from(document.querySelectorAll(".size-btn"));
   const btnPinyinToggle = document.getElementById("btn-pinyin-toggle");
   const vocabList = document.getElementById("vocab-list");
+  const pictureSection = document.getElementById("picture-section");
+  const pictureIllustration = document.getElementById("picture-illustration");
+  const pictureQuestions = document.getElementById("picture-questions");
   const grammarSection = document.getElementById("grammar-section");
   const grammarPattern = document.getElementById("grammar-pattern");
   const grammarPatternEn = document.getElementById("grammar-pattern-en");
@@ -30,7 +33,7 @@
 
   // ---------- 靜態文字（標題、標籤） ----------
   function renderStaticText() {
-    setZh(document.getElementById("page-title"), "初級中文閱讀教室");
+    setZh(document.getElementById("page-title"), "中文閱讀教室");
     setZh(
       document.getElementById("page-subtitle"),
       "對應《當代中文課程》第一冊第 7-10 課程度：讀短文、學生字、練文法。"
@@ -38,6 +41,7 @@
     setZh(document.getElementById("article-label"), "選擇課文");
     setZh(document.getElementById("size-label"), "字級");
     setZh(document.getElementById("vocab-label"), "生字重點");
+    setZh(document.getElementById("picture-label"), "看圖說故事");
     setZh(document.getElementById("grammar-label"), "文法重點");
     setZh(document.getElementById("grammar-example-label"), "例句");
     setZh(outputPlaceholder, "請從上方選擇一篇課文。");
@@ -68,6 +72,7 @@
       output.innerHTML = "";
       outputPlaceholder.hidden = false;
       vocabList.innerHTML = "";
+      pictureSection.hidden = true;
       grammarSection.hidden = true;
       return;
     }
@@ -76,7 +81,32 @@
     setZh(articleTitle, article.title);
     output.innerHTML = ZhPinyin.renderMarkup(article.text);
     renderVocab(article.vocab);
+    renderPictureStory(article.id, article.pictureStory);
     renderGrammar(article.grammar);
+  }
+
+  // ---------- 看圖說故事 ----------
+  function renderPictureStory(articleId, pictureStory) {
+    if (!pictureStory) {
+      pictureSection.hidden = true;
+      return;
+    }
+    pictureSection.hidden = false;
+    // 插畫是本檔案固定提供的信任內容（非使用者輸入），可直接塞 innerHTML
+    pictureIllustration.innerHTML = ILLUSTRATIONS[articleId] || "";
+    pictureQuestions.innerHTML = "";
+    pictureStory.questions.forEach((q) => {
+      const li = document.createElement("li");
+      const zhEl = document.createElement("div");
+      zhEl.className = "question-zh";
+      setZh(zhEl, q.zh);
+      const enEl = document.createElement("div");
+      enEl.className = "question-en";
+      setEn(enEl, q.en);
+      li.appendChild(zhEl);
+      li.appendChild(enEl);
+      pictureQuestions.appendChild(li);
+    });
   }
 
   function renderVocab(vocab) {
