@@ -104,6 +104,16 @@ check("renderMarkup 對中文逐字輸出 ruby/rt", () => {
   assert.ok(html.includes('aria-hidden="true"'));
 });
 
+check("renderMarkup 每個字各自獨立一個 <ruby>，不是多字共用一個 <ruby> 塞多個 <rt>（避免相鄰字拼音黏在一起，如「站門」曾經誤黏成 zhànmén）", () => {
+  const html = ZhPinyin.renderMarkup("捷運站門口");
+  assert.strictEqual((html.match(/<ruby>/g) || []).length, 5);
+  assert.ok(html.includes("<ruby>捷<rt>jié</rt></ruby>"));
+  assert.ok(html.includes("<ruby>運<rt>yùn</rt></ruby>"));
+  assert.ok(html.includes("<ruby>站<rt>zhàn</rt></ruby>"));
+  assert.ok(html.includes("<ruby>門<rt>mén</rt></ruby>"));
+  assert.ok(html.includes("<ruby>口<rt>kǒu</rt></ruby>"));
+});
+
 console.log("== 課文資料 ==");
 
 const basicArticles = ARTICLES.filter((a) => a.tier === "basic");
