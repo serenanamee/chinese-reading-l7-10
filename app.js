@@ -209,6 +209,9 @@
 
   // ---------- 初始化 ----------
   ZhPinyin.init();
+  // 把每篇課文的生字都登記成「詞」，這樣它們在課文內文裡出現時，拼音也會整詞連在一起顯示
+  // （不只是在生字卡片裡），例如「捷運站」不會被拆成「捷／運／站」三個獨立音節顯示。
+  ZhPinyin.registerWords(ARTICLES.flatMap((a) => (a.vocab || []).map((v) => v.word)));
   renderStaticText();
   renderArticleOptions();
   applyFontSize(ZhPrefs.getFontSize());

@@ -24,6 +24,9 @@
     "為什麼": "wèi shén me",
     "因為": "yīn wèi",
     "銀行": "yín háng",
+    // 「車」套件預設幾乎所有詞都讀成 jū（象棋棋子讀音），只有「火車」剛好對；
+    // 這裡整字校正為 chē，「火車／火車票」保留明確條目方便閱讀，其實已經涵蓋在單字校正裡
+    "車": "chē",
     "火車": "huǒ chē",
     "火車票": "huǒ chē piào",
     "有空": "yǒu kòng",
@@ -43,6 +46,53 @@
     "鞋子": "xié zi",
   };
 
+  // 常見的多字詞：讓這些詞的拼音在畫面上連在一起顯示（一個 <ruby> 一個 <rt>），
+  // 而不是每個字分開各自的拼音。這裡先放最常見的代名詞／時間詞／招呼語／連接詞，
+  // 課文裡的生字（articles.js／samples.js 的 vocab word）另外由 registerWords() 加進來，
+  // 沒被登記的詞仍然會逐字顯示拼音（安全的預設行為，只是不會連在一起，不會有拼錯或黏字的問題）。
+  const COMMON_WORDS = [
+    "我們", "你們", "他們", "她們", "咱們", "人們",
+    "台灣", "台北", "台南", "台中", "中國", "美國", "日本", "了解", "比較",
+    "你好", "妳好", "早安", "午安", "晚安", "再見", "謝謝", "不客氣", "對不起", "沒關係",
+    "現在", "已經", "馬上", "剛才", "今天", "明天", "昨天", "今年", "去年", "明年",
+    "早上", "中午", "下午", "晚上", "週末", "星期",
+    "覺得", "知道", "喜歡", "希望", "可以", "應該", "可能", "打算", "決定", "需要",
+    "因為", "所以", "但是", "可是", "如果", "雖然", "不過", "而且", "還是", "或是",
+    "朋友", "家人", "同學", "老師", "同事", "老闆",
+    "地方", "時候", "東西", "事情", "問題",
+    "一起", "一樣", "一定", "一直", "已經", "常常", "通常", "有時候", "不小心",
+    "什麼", "怎麼", "為什麼", "多少", "哪裡", "哪個",
+    "捷運", "捷運站", "高鐵", "火車", "公車", "計程車", "門口", "門票",
+  ];
+
+  const WORD_SET = new Set(COMMON_WORDS);
+  let maxWordLen = 0;
+  function addWord(word) {
+    const len = Array.from(word).length;
+    if (len < 2) return;
+    WORD_SET.add(word);
+    if (len > maxWordLen) maxWordLen = len;
+  }
+  COMMON_WORDS.forEach(addWord);
+  Object.keys(PINYIN_CORRECTIONS).forEach(addWord);
+
+  // 讓呼叫端（app.js）把課文生字表（vocab word）登記進來，這樣生字在課文內文裡出現時，
+  // 拼音也會跟生字卡片一樣整詞連在一起顯示，不用每篇文章手動列一次。
+  function registerWords(words) {
+    (words || []).forEach(addWord);
+  }
+
+  // 在 chars（單一漢字陣列）的 start 位置，從已登記的詞表裡找「最長」的相符詞，
+  // 找不到就回傳 1（退回單字顯示，安全預設值）。
+  function longestWordMatchLength(chars, start) {
+    const limit = Math.min(maxWordLen, chars.length - start);
+    for (let len = limit; len >= 2; len--) {
+      const candidate = chars.slice(start, start + len).join("");
+      if (WORD_SET.has(candidate)) return len;
+    }
+    return 1;
+  }
+
   function init() {
     if (initialized) return;
     if (!global.pinyinPro || typeof global.pinyinPro.customPinyin !== "function") {
@@ -61,20 +111,26 @@
       .replace(/'/g, "&#39;");
   }
 
-  // 把一段純中文（不含英數標點）轉成多個 <ruby> 區塊，每個字各自獨立一個 <ruby>，
-  // 而不是共用一個 <ruby> 塞很多個 <rt>。
-  // 為什麼要每字一個 <ruby>：多字共用一個 <ruby>、裡面塞多個 <rt> 時，沒有明確的 <rb> 告訴瀏覽器
-  // 「這個 <rt> 對應哪個字」，瀏覽器只能用內建規則去猜配對，猜錯的時候相鄰兩個字的拼音會黏在一起、
-  // 中間沒有間隔（例如「捷運站門口」曾經渲染成 zhànmén 黏成一串，即使拼音資料本身是對的）。
-  // 每個字各自一個 <ruby> 之後，配對永遠是一對一、不會有歧義，瀏覽器排版時每個 <ruby> 也會各自
-  // 保留足夠寬度容納自己的拼音，相鄰字的拼音就不會互相覆蓋。
+  // 把一段純中文（不含英數標點）轉成多個 <ruby> 區塊。
+  //
+  // 每個「詞」（登記在 WORD_SET 裡的已知詞）用一個 <ruby> 包住整個詞、配一個合併的 <rt>
+  // （例如「捷運站」→ <ruby>捷運站<rt>jié yùn zhàn</rt></ruby>），這樣同一個詞的拼音會連在一起顯示，
+  // 符合漢語拼音正詞法「詞之間留空格、詞內部不留空格」的慣例，讀起來才會知道哪些字是一個詞。
+  // 沒登記過的字（多數是還沒被收錄的詞）安全地退回每字一個 <ruby>——這正是之前修過的做法：
+  // 多字共用一個 <ruby> 塞多個 <rt> 時，沒有 <rb> 告訴瀏覽器配對關係，猜錯了相鄰字拼音會黏在一起
+  // 沒有間隔（例如「捷運站門口」曾經整段黏成一串）。每個 <ruby> 只包一個「已知詞」或一個單字，
+  // 配對永遠明確、不會有歧義。
   function hanRunToRuby(run) {
     const pinyinArr = global.pinyinPro.pinyin(run, { type: "array" });
     const chars = Array.from(run);
     let out = "";
-    for (let i = 0; i < chars.length; i++) {
-      const py = pinyinArr[i] || "";
-      out += "<ruby>" + escapeHtml(chars[i]) + "<rt>" + escapeHtml(py) + "</rt></ruby>";
+    let i = 0;
+    while (i < chars.length) {
+      const len = longestWordMatchLength(chars, i);
+      const base = chars.slice(i, i + len).join("");
+      const py = pinyinArr.slice(i, i + len).join(" ");
+      out += "<ruby>" + escapeHtml(base) + "<rt>" + escapeHtml(py) + "</rt></ruby>";
+      i += len;
     }
     return out;
   }
@@ -124,7 +180,7 @@
     };
   }
 
-  const ZhPinyin = { init, renderMarkup, toPlainPinyin, escapeHtml, debounce };
+  const ZhPinyin = { init, renderMarkup, toPlainPinyin, escapeHtml, debounce, registerWords };
 
   if (typeof module !== "undefined" && module.exports) {
     module.exports = ZhPinyin;

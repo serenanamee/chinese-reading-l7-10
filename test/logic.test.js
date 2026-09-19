@@ -54,9 +54,12 @@ check("一般詞語轉換正確且帶聲調符號", () => {
   assert.strictEqual(ZhPinyin.toPlainPinyin("水果"), "shuǐ guǒ");
 });
 
-check("多音字校正：火車 讀 huǒ chē，不是 huǒ jū", () => {
+check("多音字校正：車 一律讀 chē，不是 jū（套件預設幾乎所有含「車」的詞都誤讀成棋子讀音）", () => {
   assert.strictEqual(ZhPinyin.toPlainPinyin("火車"), "huǒ chē");
   assert.strictEqual(ZhPinyin.toPlainPinyin("火車票"), "huǒ chē piào");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("公車"), "gōng chē");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("車廂"), "chē xiāng");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("計程車"), "jì chéng chē");
 });
 
 check("多音字校正：有空 讀 yǒu kòng，不是 yǒu kōng", () => {
@@ -104,14 +107,24 @@ check("renderMarkup 對中文逐字輸出 ruby/rt", () => {
   assert.ok(html.includes('aria-hidden="true"'));
 });
 
-check("renderMarkup 每個字各自獨立一個 <ruby>，不是多字共用一個 <ruby> 塞多個 <rt>（避免相鄰字拼音黏在一起，如「站門」曾經誤黏成 zhànmén）", () => {
-  const html = ZhPinyin.renderMarkup("捷運站門口");
-  assert.strictEqual((html.match(/<ruby>/g) || []).length, 5);
-  assert.ok(html.includes("<ruby>捷<rt>jié</rt></ruby>"));
-  assert.ok(html.includes("<ruby>運<rt>yùn</rt></ruby>"));
+check("renderMarkup 對沒有登記過的字，每個字各自獨立一個 <ruby>，不是共用一個 <ruby> 塞多個 <rt>（避免相鄰字拼音黏在一起，此案例的舊 bug 曾經黏成 zhùnmén）", () => {
+  const html = ZhPinyin.renderMarkup("站叫");
+  assert.strictEqual((html.match(/<ruby>/g) || []).length, 2);
   assert.ok(html.includes("<ruby>站<rt>zhàn</rt></ruby>"));
-  assert.ok(html.includes("<ruby>門<rt>mén</rt></ruby>"));
-  assert.ok(html.includes("<ruby>口<rt>kǒu</rt></ruby>"));
+  assert.ok(html.includes("<ruby>叫<rt>jiào</rt></ruby>"));
+});
+
+check("renderMarkup 對已登記的詞（COMMON_WORDS 或 registerWords 加入的生字），整詞的拼音連在一起顯示成一個 <ruby>", () => {
+  const html = ZhPinyin.renderMarkup("捷運站門口");
+  assert.strictEqual((html.match(/<ruby>/g) || []).length, 2);
+  assert.ok(html.includes("<ruby>捷運站<rt>jié yùn zhàn</rt></ruby>"), html);
+  assert.ok(html.includes("<ruby>門口<rt>mén kǒu</rt></ruby>"), html);
+});
+
+check("registerWords() 可以動態登記新詞（例如課文生字），登記後在內文裡也會整詞連在一起", () => {
+  ZhPinyin.registerWords(["奇怪詞測試"]);
+  const html = ZhPinyin.renderMarkup("這是奇怪詞測試句子");
+  assert.ok(html.includes("<ruby>奇怪詞測試<rt>"), html);
 });
 
 console.log("== 課文資料 ==");
