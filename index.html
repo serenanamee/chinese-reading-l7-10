@@ -16,8 +16,21 @@
 
   <div class="toolbar" role="toolbar" aria-label="工具列">
     <div class="sample-group">
-      <label id="article-label" for="article-select"></label>
-      <select id="article-select"></select>
+      <span id="article-label" class="sample-label"></span>
+      <div class="picker" id="picker">
+        <button id="picker-btn" type="button" class="picker-btn" aria-haspopup="true" aria-expanded="false" aria-controls="picker-panel">
+          <span id="picker-btn-text" class="picker-btn-text">— 選擇課文 —</span>
+          <span class="picker-caret" aria-hidden="true">▾</span>
+        </button>
+        <div id="picker-panel" class="picker-panel" hidden>
+          <div class="picker-head">
+            <span id="taught-progress" class="taught-progress"></span>
+            <span class="picker-hint">打勾＝已上過</span>
+            <button id="taught-reset" type="button" class="picker-reset">全部清除</button>
+          </div>
+          <div id="picker-list" class="picker-list"></div>
+        </div>
+      </div>
     </div>
 
     <div class="size-group" role="group" aria-label="字級">
@@ -36,6 +49,10 @@
     <div class="reading-head">
       <span id="lesson-badge" class="lesson-badge"></span>
       <h2 id="article-title" class="article-title"></h2>
+      <label id="current-taught" class="current-taught" hidden>
+        <input type="checkbox" id="current-taught-box">
+        <span id="current-taught-text"></span>
+      </label>
     </div>
     <div id="article-output" class="article-output" aria-live="polite"></div>
     <p id="output-placeholder" class="output-placeholder"></p>

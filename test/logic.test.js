@@ -314,5 +314,22 @@ check("拼音顯示預設為 true，儲存後可正確讀回", () => {
   assert.strictEqual(ZhPrefs.getPinyinVisible(), true);
 });
 
+check("已上過清單預設為空陣列，儲存後可讀回且自動去除重複", () => {
+  assert.deepStrictEqual(ZhPrefs.getTaughtIds(), []);
+  const [a, b] = ARTICLES.map((x) => x.id);
+  ZhPrefs.saveTaughtIds([a, b, a]);
+  assert.deepStrictEqual(ZhPrefs.getTaughtIds(), [a, b]);
+  ZhPrefs.saveTaughtIds([]);
+  assert.deepStrictEqual(ZhPrefs.getTaughtIds(), []);
+});
+
+check("已上過清單遇到壞掉的 localStorage 內容時回傳空陣列，不噴錯", () => {
+  localStorage.setItem("zhReadingLab:taughtIds", "{not json");
+  assert.deepStrictEqual(ZhPrefs.getTaughtIds(), []);
+  localStorage.setItem("zhReadingLab:taughtIds", JSON.stringify({ a: 1 }));
+  assert.deepStrictEqual(ZhPrefs.getTaughtIds(), []);
+  localStorage.removeItem("zhReadingLab:taughtIds");
+});
+
 console.log("\n" + passed + " passed, " + failures + " failed");
 process.exit(failures > 0 ? 1 : 0);

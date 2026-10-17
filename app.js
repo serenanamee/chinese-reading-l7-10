@@ -1,11 +1,20 @@
 // 初級中文閱讀教室：讀短文、看生字、學文法，對應《當代中文課程》第一冊第 7-10 課程度。
-// 短文與生字、文法資料在 articles.js，拼音由 pinyin.js 即時產生，字級／拼音顯示偏好由 prefs-store.js 存取。
+// 短文與生字、文法資料在 articles.js，拼音由 pinyin.js 即時產生，字級／拼音顯示偏好與「已上過」勾選由 prefs-store.js 存取。
 // 這裡只負責 DOM 渲染與事件綁定。
 
 (function () {
   "use strict";
 
-  const articleSelect = document.getElementById("article-select");
+  const picker = document.getElementById("picker");
+  const pickerBtn = document.getElementById("picker-btn");
+  const pickerBtnText = document.getElementById("picker-btn-text");
+  const pickerPanel = document.getElementById("picker-panel");
+  const pickerList = document.getElementById("picker-list");
+  const taughtProgress = document.getElementById("taught-progress");
+  const taughtReset = document.getElementById("taught-reset");
+  const currentTaught = document.getElementById("current-taught");
+  const currentTaughtBox = document.getElementById("current-taught-box");
+  const currentTaughtText = document.getElementById("current-taught-text");
   const lessonBadge = document.getElementById("lesson-badge");
   const articleTitle = document.getElementById("article-title");
   const output = document.getElementById("article-output");
@@ -22,6 +31,10 @@
   const grammarExplanation = document.getElementById("grammar-explanation");
   const grammarExplanationEn = document.getElementById("grammar-explanation-en");
   const grammarExampleList = document.getElementById("grammar-example-list");
+
+  let currentArticle = null;
+  let taughtIds = new Set(ZhPrefs.getTaughtIds());
+  const PICKER_PLACEHOLDER = "— 選擇課文 —";
 
   function setZh(el, text) {
     el.innerHTML = ZhPinyin.renderMarkup(text);
@@ -47,25 +60,114 @@
     setZh(outputPlaceholder, "請從上方選擇一篇課文。");
   }
 
+  // ---------- 課文選單（可打勾標記「已上過」） ----------
+  // 原生 <select> 無法放勾選框、也不能可靠地替選項換顏色（macOS 會忽略 option 樣式），
+  // 所以改成自訂的下拉面板：點標題載入課文，點左邊勾選框標記已上過。
   function renderArticleOptions() {
-    let currentGroup = null;
+    pickerList.innerHTML = "";
+    let groupEl = null;
     let currentCategory = null;
     ARTICLES.forEach((a) => {
       if (a.category !== currentCategory) {
         currentCategory = a.category;
-        currentGroup = document.createElement("optgroup");
-        currentGroup.label = currentCategory;
-        articleSelect.appendChild(currentGroup);
+        groupEl = document.createElement("div");
+        groupEl.className = "picker-group";
+        groupEl.setAttribute("role", "group");
+        groupEl.setAttribute("aria-label", a.category);
+        const head = document.createElement("div");
+        head.className = "picker-group-head";
+        head.dataset.category = a.category;
+        groupEl.appendChild(head);
+        pickerList.appendChild(groupEl);
       }
-      const opt = document.createElement("option");
-      opt.value = a.id;
-      opt.textContent = a.title;
-      currentGroup.appendChild(opt);
+      const row = document.createElement("div");
+      row.className = "picker-row";
+      row.dataset.id = a.id;
+
+      const box = document.createElement("input");
+      box.type = "checkbox";
+      box.className = "picker-check";
+      box.dataset.id = a.id;
+      box.setAttribute("aria-label", "標記「" + a.title + "」已上過");
+
+      const item = document.createElement("button");
+      item.type = "button";
+      item.className = "picker-item";
+      item.dataset.id = a.id;
+      item.textContent = a.title;
+
+      row.appendChild(box);
+      row.appendChild(item);
+      groupEl.appendChild(row);
     });
+    refreshTaughtUI();
+  }
+
+  function refreshTaughtUI() {
+    pickerList.querySelectorAll(".picker-row").forEach((row) => {
+      const taught = taughtIds.has(row.dataset.id);
+      row.classList.toggle("is-taught", taught);
+      row.classList.toggle("is-current", !!currentArticle && row.dataset.id === currentArticle.id);
+      row.querySelector(".picker-check").checked = taught;
+    });
+    pickerList.querySelectorAll(".picker-group").forEach((groupEl) => {
+      const rows = groupEl.querySelectorAll(".picker-row");
+      const done = groupEl.querySelectorAll(".picker-row.is-taught").length;
+      const head = groupEl.querySelector(".picker-group-head");
+      head.textContent = head.dataset.category + "　" + done + "/" + rows.length;
+      groupEl.classList.toggle("is-all-taught", done === rows.length);
+    });
+
+    const total = ARTICLES.length;
+    const done = ARTICLES.filter((a) => taughtIds.has(a.id)).length;
+    taughtProgress.textContent = "已上過 " + done + " / " + total;
+    taughtReset.hidden = done === 0;
+
+    if (currentArticle) {
+      const taught = taughtIds.has(currentArticle.id);
+      currentTaught.hidden = false;
+      currentTaught.classList.toggle("is-taught", taught);
+      currentTaughtBox.checked = taught;
+      currentTaughtText.textContent = taught ? "這課已上過 ✓" : "這課已上過";
+      pickerBtnText.textContent = currentArticle.title;
+      pickerBtn.classList.toggle("is-taught", taught);
+    } else {
+      currentTaught.hidden = true;
+      pickerBtnText.textContent = PICKER_PLACEHOLDER;
+      pickerBtn.classList.remove("is-taught");
+    }
+  }
+
+  function setTaught(id, taught) {
+    if (taught) taughtIds.add(id);
+    else taughtIds.delete(id);
+    ZhPrefs.saveTaughtIds(Array.from(taughtIds));
+    refreshTaughtUI();
+  }
+
+  function openPicker() {
+    pickerPanel.hidden = false;
+    pickerBtn.setAttribute("aria-expanded", "true");
+    const target =
+      (currentArticle && pickerList.querySelector('.picker-item[data-id="' + currentArticle.id + '"]')) ||
+      pickerList.querySelector(".picker-item");
+    if (target) {
+      target.scrollIntoView({ block: "nearest" });
+      target.focus();
+    }
+  }
+
+  function closePicker(returnFocus) {
+    if (pickerPanel.hidden) return;
+    pickerPanel.hidden = true;
+    pickerBtn.setAttribute("aria-expanded", "false");
+    if (returnFocus) pickerBtn.focus();
   }
 
   // ---------- 課文內容 ----------
   function renderArticle(article) {
+    currentArticle = article || null;
+    refreshTaughtUI();
     if (!article) {
       lessonBadge.textContent = "";
       articleTitle.innerHTML = "";
@@ -169,10 +271,44 @@
     });
   }
 
-  articleSelect.addEventListener("change", function () {
-    const article = ARTICLES.find((a) => a.id === articleSelect.value);
+  pickerBtn.addEventListener("click", function () {
+    if (pickerPanel.hidden) openPicker();
+    else closePicker(false);
+  });
+
+  pickerList.addEventListener("click", function (e) {
+    const item = e.target.closest(".picker-item");
+    if (!item) return;
+    const article = ARTICLES.find((a) => a.id === item.dataset.id);
+    if (!article) return;
     renderArticle(article);
-    if (article) window.scrollTo({ top: 0, behavior: "smooth" });
+    closePicker(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  pickerList.addEventListener("change", function (e) {
+    if (!e.target.classList.contains("picker-check")) return;
+    setTaught(e.target.dataset.id, e.target.checked);
+  });
+
+  currentTaughtBox.addEventListener("change", function () {
+    if (currentArticle) setTaught(currentArticle.id, currentTaughtBox.checked);
+  });
+
+  taughtReset.addEventListener("click", function () {
+    const ok = window.confirm("確定要清除所有「已上過」的勾選嗎？");
+    if (!ok) return;
+    taughtIds = new Set();
+    ZhPrefs.saveTaughtIds([]);
+    refreshTaughtUI();
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!picker.contains(e.target)) closePicker(false);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !pickerPanel.hidden) closePicker(true);
   });
 
   // ---------- 字級切換 ----------
@@ -218,8 +354,5 @@
   applyPinyinVisible(ZhPrefs.getPinyinVisible());
 
   const firstArticle = ARTICLES[0];
-  if (firstArticle) {
-    articleSelect.value = firstArticle.id;
-    renderArticle(firstArticle);
-  }
+  if (firstArticle) renderArticle(firstArticle);
 })();
