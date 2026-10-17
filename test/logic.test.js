@@ -54,6 +54,15 @@ check("一般詞語轉換正確且帶聲調符號", () => {
   assert.strictEqual(ZhPinyin.toPlainPinyin("水果"), "shuǐ guǒ");
 });
 
+check("多音字校正：搶 讀第三聲 qiǎng；著 當助詞讀輕聲 zhe，著迷 zháo、著名 zhù 不受影響", () => {
+  assert.strictEqual(ZhPinyin.toPlainPinyin("搶著付錢"), "qiǎng zhe fù qián");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("搶票"), "qiǎng piào");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("接著"), "jiē zhe");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("跟著"), "gēn zhe");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("著迷"), "zháo mí");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("著名"), "zhù míng");
+});
+
 check("多音字校正：車 一律讀 chē，不是 jū（套件預設幾乎所有含「車」的詞都誤讀成棋子讀音）", () => {
   assert.strictEqual(ZhPinyin.toPlainPinyin("火車"), "huǒ chē");
   assert.strictEqual(ZhPinyin.toPlainPinyin("火車票"), "huǒ chē piào");
