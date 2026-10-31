@@ -59,7 +59,7 @@ check("多音字校正：長 在職稱／成長／長大讀 zhǎng，長期／�
   assert.strictEqual(ZhPinyin.toPlainPinyin("持續成長"), "chí xù chéng zhǎng");
   assert.strictEqual(ZhPinyin.toPlainPinyin("一起長大"), "yì qǐ zhǎng dà");
   assert.strictEqual(ZhPinyin.toPlainPinyin("長官"), "zhǎng guān");
-  assert.strictEqual(ZhPinyin.toPlainPinyin("長期"), "cháng qī");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("長期"), "cháng qí");
   assert.strictEqual(ZhPinyin.toPlainPinyin("很長"), "hěn cháng");
   assert.strictEqual(ZhPinyin.toPlainPinyin("有助於"), "yǒu zhù yú");
 });
@@ -288,6 +288,13 @@ check("多音字校正：得體／值得 讀 dé；副詞「地」讀 de；京�
   assert.strictEqual(ZhPinyin.toPlainPinyin("輩分"), "bèi fèn");
   assert.strictEqual(ZhPinyin.toPlainPinyin("數量"), "shù liàng");
   assert.strictEqual(ZhPinyin.toPlainPinyin("給予"), "jǐ yǔ");
+});
+
+check("統一成《當代中文課程》讀法：期 讀 qí（星期／期間），垃圾 讀 lè sè，晚上 讀 wǎn shàng", () => {
+  assert.strictEqual(ZhPinyin.toPlainPinyin("星期五"), "xīng qí wǔ");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("期間"), "qí jiān");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("垃圾"), "lè sè");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("晚上"), "wǎn shàng");
 });
 
 check("片語校正（很快地／錯了）只修讀音，不會在畫面上被當成一個詞連在一起", () => {
