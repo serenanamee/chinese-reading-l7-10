@@ -351,25 +351,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "擁抱",
-        meaning: "用手臂抱住對方，表示親近或高興。",
+        meaning: "兩個人用手抱在一起。",
         meaningEn: "to hug / to embrace",
         examples: ["久別重逢，他們緊緊擁抱了一下。", "在機場，媽媽給了我一個擁抱。"],
       },
       {
         word: "親密",
-        meaning: "關係很近、很熟悉。",
+        meaning: "兩個人很好、很近。",
         meaningEn: "intimate / close",
         examples: ["他們兩個從小一起長大，感情很親密。", "這是我最親密的朋友。"],
       },
       {
         word: "習慣",
-        meaning: "長期養成、很自然就會做的行為。",
+        meaning: "常常做、每天都這樣做的事。",
         meaningEn: "habit / custom",
         examples: ["每個國家的飲食習慣都不太一樣。", "我習慣早上喝一杯咖啡。"],
       },
       {
         word: "點頭",
-        meaning: "頭往下再往上動一下，表示同意或打招呼。",
+        meaning: "頭往下動一下，意思是「好」或「你好」。",
         meaningEn: "to nod",
         examples: ["老師說完，他點頭表示明白了。", "他對我笑了笑，點了點頭。"],
       },
@@ -388,25 +388,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "稱呼",
-        meaning: "叫別人的方式，例如加上姓氏或職稱。",
+        meaning: "叫別人的方法，例如「王老師」。",
         meaningEn: "form of address / to address someone",
         examples: ["我不知道該怎麼稱呼他。", "同事之間，稱呼可以隨便一點。"],
       },
       {
         word: "職稱",
-        meaning: "工作上的頭銜，例如經理、老師。",
+        meaning: "工作的名字，例如經理、老師。",
         meaningEn: "job title",
         examples: ["名片上通常會寫姓名跟職稱。", "他升職以後，職稱也改變了。"],
       },
       {
         word: "禮貌",
-        meaning: "尊重別人、得體的行為。",
+        meaning: "對別人很好，會說「請」、「謝謝」。",
         meaningEn: "polite / courteous",
         examples: ["跟長輩說話要有禮貌。", "他是一個很有禮貌的年輕人。"],
       },
       {
         word: "親近",
-        meaning: "關係很好、感覺很近。",
+        meaning: "兩個人很好，常常在一起。",
         meaningEn: "close / friendly",
         examples: ["她跟班上同學都很親近。", "多聊聊天，會讓彼此更親近。"],
       },
@@ -425,25 +425,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "意義",
-        meaning: "一件事情或東西所代表的意思。",
+        meaning: "一件事真正的意思。",
         meaningEn: "meaning / significance",
         examples: ["這份禮物對他來說有特別的意義。", "了解節日的意義，才知道為什麼要慶祝。"],
       },
       {
         word: "通常",
-        meaning: "大部分的情況下、一般來說。",
+        meaning: "很多時候都是這樣。",
         meaningEn: "usually / normally",
         examples: ["他通常七點就起床了。", "台灣的夏天通常很熱。"],
       },
       {
         word: "奇怪",
-        meaning: "跟平常不一樣，讓人覺得不容易理解。",
+        meaning: "跟平常不一樣，你不懂為什麼。",
         meaningEn: "strange / odd",
         examples: ["這件事聽起來很奇怪。", "他今天怪怪的，好像有什麼奇怪的事發生了。"],
       },
       {
         word: "不小心",
-        meaning: "沒有特別注意，做錯了事。",
+        meaning: "不是想這樣做，可是做錯了。",
         meaningEn: "carelessly / by accident",
         examples: ["我不小心把水打翻了。", "他不小心說錯了朋友的名字。"],
       },
@@ -462,25 +462,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "作客",
-        meaning: "到別人家裡拜訪、當客人。",
+        meaning: "去別人家，當客人。",
         meaningEn: "to be a guest (at someone’s home)",
         examples: ["週末我要去阿姨家作客。", "第一次去老師家作客，覺得有點緊張。"],
       },
       {
         word: "脫鞋子",
-        meaning: "把鞋子從腳上拿下來。",
+        meaning: "鞋子不穿了，放在門口。",
         meaningEn: "to take off one’s shoes",
         examples: ["進屋前記得脫鞋子。", "他習慣一進門就脫鞋子。"],
       },
       {
         word: "主人",
-        meaning: "邀請客人、招待大家的人。",
+        meaning: "在家裡請大家吃飯的人。",
         meaningEn: "host",
         examples: ["主人準備了很多好吃的菜招待我們。", "身為主人，他很照顧每一位客人。"],
       },
       {
         word: "客氣",
-        meaning: "說話或做事很有禮貌、不隨便。",
+        meaning: "對別人很有禮貌。",
         meaningEn: "polite / modest",
         examples: ["不用這麼客氣，就像在自己家一樣。", "他對每個人都很客氣。"],
       },
@@ -498,25 +498,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "筷子",
-        meaning: "吃飯用的兩根細長棍子。",
+        meaning: "吃飯用的兩根長長的東西。",
         meaningEn: "chopsticks",
         examples: ["他還不太會用筷子。", "請幫我拿一雙筷子。"],
       },
       {
         word: "插",
-        meaning: "把細長的東西放進另一個東西裡面。",
+        meaning: "長長的東西放到裡面去。",
         meaningEn: "to insert / to stick into",
         examples: ["她把花插進花瓶裡。", "路口插了一支新的路牌。"],
       },
       {
         word: "指",
-        meaning: "用手指向某個方向或某個人。",
+        meaning: "用手對著一個人或一個地方。",
         meaningEn: "to point (at/toward)",
         examples: ["他指著地圖，說明怎麼走。", "用手指著別人不太禮貌。"],
       },
       {
         word: "理解",
-        meaning: "明白對方的想法或原因。",
+        meaning: "懂別人的意思。",
         meaningEn: "to understand",
         examples: ["謝謝你理解我的困難。", "這件事有點複雜，我需要時間理解。"],
       },
@@ -534,25 +534,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "搶",
-        meaning: "很快地去做，怕被別人先做了。",
+        meaning: "很快去做，想比別人先做。",
         meaningEn: "to rush to do / to compete for",
         examples: ["大家都搶著幫忙搬東西。", "他每次都搶著發言。"],
       },
       {
         word: "付帳",
-        meaning: "付錢，結清消費的金額。",
+        meaning: "吃完飯以後給錢。",
         meaningEn: "to pay the bill",
         examples: ["吃完飯，他堅持要付帳。", "請問可以用信用卡付帳嗎？"],
       },
       {
         word: "請客",
-        meaning: "自己出錢招待別人吃飯或消費。",
+        meaning: "你給錢，朋友不用給錢。",
         meaningEn: "to treat someone (pay for them)",
         examples: ["今天算我請客，你們不用付錢。", "謝謝你上次請客，下次換我。"],
       },
       {
         word: "不好意思",
-        meaning: "覺得有點難為情、不自在。",
+        meaning: "心裡有一點不舒服，不知道怎麼辦。",
         meaningEn: "embarrassed / to feel awkward",
         examples: ["讓你破費，真不好意思。", "他不好意思在大家面前唱歌。"],
       },
@@ -571,25 +571,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "遲到",
-        meaning: "比約定的時間晚到。",
+        meaning: "比說好的時間晚到。",
         meaningEn: "to be late",
         examples: ["今天塞車，我上班遲到了。", "開會不可以遲到。"],
       },
       {
         word: "準時",
-        meaning: "在約定的時間到，不早也不晚。",
+        meaning: "在說好的時間到，不早也不晚。",
         meaningEn: "on time / punctual",
         examples: ["火車會準時出發，請不要遲到。", "他做事一向很準時。"],
       },
       {
         word: "尊重",
-        meaning: "重視、不隨便對待別人的想法或感受。",
+        meaning: "覺得別人很重要，對別人很好。",
         meaningEn: "to respect",
         examples: ["我們應該尊重不同的文化。", "他很尊重每一位同事的意見。"],
       },
       {
         word: "約時間",
-        meaning: "跟別人約定見面的時間。",
+        meaning: "跟別人說好什麼時候見面。",
         meaningEn: "to make an appointment / arrange a time",
         examples: ["我們先約時間，再決定地點。", "跟醫生約時間看診。"],
       },
@@ -607,25 +607,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "安排",
-        meaning: "事先計畫、決定怎麼做。",
+        meaning: "先想好什麼時候做什麼。",
         meaningEn: "to arrange / to schedule",
         examples: ["這次旅行的行程由我來安排。", "老師幫我們安排了新的座位。"],
       },
       {
         word: "主管",
-        meaning: "負責帶領部門或團隊的上級。",
+        meaning: "公司裡告訴你要做什麼的人。",
         meaningEn: "supervisor / manager",
         examples: ["這件事要先問過主管。", "新來的主管人很好。"],
       },
       {
         word: "員工",
-        meaning: "在公司裡工作的人。",
+        meaning: "在公司工作的人。",
         meaningEn: "employee",
         examples: ["這家公司有一百多位員工。", "公司很重視員工的意見。"],
       },
       {
         word: "重視",
-        meaning: "很在意、覺得很重要。",
+        meaning: "覺得很重要。",
         meaningEn: "to value / to attach importance to",
         examples: ["這家公司很重視員工的健康。", "他非常重視跟家人相處的時間。"],
       },
@@ -644,25 +644,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "長輩",
-        meaning: "年紀比較大、輩分比較高的親人。",
+        meaning: "家裡年紀比你大的人，例如爸爸、媽媽、爺爺。",
         meaningEn: "elders (in the family)",
         examples: ["過年要跟長輩拜年。", "跟長輩說話要有禮貌。"],
       },
       {
         word: "晚輩",
-        meaning: "年紀比較小、輩分比較低的親人。",
+        meaning: "家裡年紀比你小的人，例如孩子。",
         meaningEn: "younger generation (in the family)",
         examples: ["長輩很疼愛家裡的晚輩。", "身為晚輩，要尊敬長輩。"],
       },
       {
         word: "偶數",
-        meaning: "可以被二整除的數字，例如二、四、六。",
+        meaning: "二、四、六、八、十這樣的數字。",
         meaningEn: "even number",
         examples: ["二和四都是偶數。", "送禮的數量最好是偶數。"],
       },
       {
         word: "吉利",
-        meaning: "帶來好運、順利的意思。",
+        meaning: "很好，會有好事來。",
         meaningEn: "auspicious / lucky",
         examples: ["紅色在華人文化裡代表吉利。", "大家都喜歡吉利的數字。"],
       },
@@ -680,25 +680,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "慶祝",
-        meaning: "為了值得高興的事，舉辦活動或聚會。",
+        meaning: "有好事的時候，大家一起高興。",
         meaningEn: "to celebrate",
         examples: ["我們一起慶祝畢業吧！", "全家人一起慶祝新年。"],
       },
       {
         word: "長壽",
-        meaning: "活得很久、壽命很長。",
+        meaning: "活很久、年紀很大。",
         meaningEn: "longevity / long life",
         examples: ["祝爺爺身體健康、長壽。", "多運動有助於長壽。"],
       },
       {
         word: "咬斷",
-        meaning: "用牙齒把東西咬成兩段。",
+        meaning: "用牙齒咬，東西變成兩個。",
         meaningEn: "to bite through / bite in two",
         examples: ["小心，不要咬斷筷子。", "他一口就把餅乾咬斷了。"],
       },
       {
         word: "代表",
-        meaning: "表示某種意義。",
+        meaning: "一個東西有另外一個意思，例如紅色代表好事。",
         meaningEn: "to represent / to symbolize",
         examples: ["紅色在這裡代表喜氣。", "白鴿代表和平。"],
       },
@@ -716,25 +716,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "排隊",
-        meaning: "一個接著一個站好，依照順序等待。",
+        meaning: "大家一個一個站好，一個一個來。",
         meaningEn: "to queue / to line up",
         examples: ["買票的人很多，要排隊等一下。", "他們排隊排了半個小時。"],
       },
       {
         word: "插隊",
-        meaning: "不按順序，直接排到別人前面。",
+        meaning: "不排隊，站到別人前面。",
         meaningEn: "to cut in line",
         examples: ["請不要插隊，大家都在排隊。", "他插隊被後面的人提醒了。"],
       },
       {
         word: "順序",
-        meaning: "事情先後的次序、排列方式。",
+        meaning: "誰第一、誰第二、誰第三。",
         meaningEn: "order / sequence",
         examples: ["請照順序進場。", "這些步驟的順序不能弄錯。"],
       },
       {
         word: "生氣",
-        meaning: "心情不好、感到不高興。",
+        meaning: "不高興。",
         meaningEn: "angry",
         examples: ["他因為遲到而生氣。", "不要生氣，這只是誤會。"],
       },
@@ -752,25 +752,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "車廂",
-        meaning: "火車、捷運裡載客人的一節車體。",
+        meaning: "火車、捷運裡，人坐的地方。",
         meaningEn: "train car / carriage",
         examples: ["這節車廂人很多。", "請往車廂中間走。"],
       },
       {
         word: "口香糖",
-        meaning: "可以一直嚼、不吞下去的糖。",
+        meaning: "可以一直咬，可是不吃下去的糖。",
         meaningEn: "chewing gum",
         examples: ["他嘴裡一直嚼著口香糖。", "捷運上不可以嚼口香糖。"],
       },
       {
         word: "孕婦",
-        meaning: "懷孕、肚子裡有小孩的女性。",
+        meaning: "肚子裡有小孩的媽媽。",
         meaningEn: "pregnant woman",
         examples: ["博愛座要讓給孕婦坐。", "這位孕婦快要生了。"],
       },
       {
         word: "隨便",
-        meaning: "沒有特別考慮、不太在意地做。",
+        meaning: "不想很多，怎麼樣都可以。",
         meaningEn: "casually / carelessly / whatever",
         examples: ["不要隨便亂丟垃圾。", "晚餐吃什麼都可以，我隨便。"],
       },
@@ -789,25 +789,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "加油",
-        meaning: "為別人打氣、鼓勵對方的話。",
+        meaning: "朋友考試、比賽以前，你可以跟他說的話。",
         meaningEn: "to cheer someone on / “go for it”",
         examples: ["比賽開始了，大家一起幫他加油！", "考試前，媽媽跟我說「加油」。"],
       },
       {
         word: "幾乎",
-        meaning: "差不多、接近全部的意思。",
+        meaning: "差不多都是。",
         meaningEn: "almost / nearly",
         examples: ["他幾乎每天都運動。", "這件事幾乎沒有人知道。"],
       },
       {
         word: "翻譯",
-        meaning: "把一種語言換成另一種語言。",
+        meaning: "中文說成英文，或英文說成中文。",
         meaningEn: "to translate",
         examples: ["請幫我把這句話翻譯成英文。", "他是專業的翻譯人員。"],
       },
       {
         word: "支持",
-        meaning: "站在對方那一邊、給予鼓勵或幫助。",
+        meaning: "你想做的事，我覺得很好，我會幫你。",
         meaningEn: "to support",
         examples: ["家人一直很支持我的決定。", "謝謝大家的支持。"],
       },
