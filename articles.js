@@ -711,63 +711,51 @@ const ARTICLES = [
     title: "萬聖節派對，算我一個！",
     titleEn: "Halloween Party — Count Me In!",
     text:
-      "安娜：小明，這個星期五學校有萬聖節派對，你要不要一起去？\n" +
-      "小明：好啊，算我一個！要變裝嗎？\n" +
-      "安娜：要啊，大家都會穿得很特別。我打算扮成巫婆，你呢？\n" +
-      "小明：我還沒想好……扮成殭屍好了，又簡單又好笑。\n" +
-      "安娜：哈哈，好主意！派對上還有南瓜燈比賽，可以自己刻南瓜。\n" +
-      "小明：真的假的？聽起來超好玩的！那我們要帶什麼？\n" +
-      "安娜：帶一點糖果吧。在美國，小朋友會去敲鄰居的門，說「不給糖就搗蛋」。\n" +
-      "小明：台灣比較少人這樣做，不過現在很多學校跟百貨公司都會辦萬聖節活動。\n" +
+      "安娜：小明，星期五學校有萬聖節派對，你要不要一起去？\n" +
+      "小明：好啊，算我一個！要穿什麼衣服？\n" +
+      "安娜：大家都穿很特別的衣服。我打算扮成貓，你呢？\n" +
+      "小明：我還沒想好……扮成鬼好了，又簡單又好玩。\n" +
+      "安娜：好主意！派對上還有很多南瓜，我們可以自己做南瓜燈。\n" +
+      "小明：真的假的？超好玩的！我們要帶什麼？\n" +
+      "安娜：帶一點糖果吧。在美國，小孩子會去朋友家要糖果。\n" +
+      "小明：在台灣，以前很少人過萬聖節，現在很多學校也有萬聖節活動了。\n" +
       "安娜：那星期五晚上六點，我們在學校門口見面，不見不散！",
     vocab: [
       {
         word: "萬聖節",
-        meaning: "每年十月三十一日的西方節日，很多人會變裝、拿糖果。",
+        meaning: "十月三十一日的節日，很多人穿特別的衣服。",
         meaningEn: "Halloween",
-        examples: ["萬聖節快到了，商店裡都是南瓜。", "你今年萬聖節有什麼計畫？"],
+        examples: ["萬聖節快到了。", "你今年萬聖節要做什麼？"],
       },
       {
         word: "派對",
-        meaning: "很多人聚在一起吃東西、聊天、玩遊戲的活動。",
+        meaning: "很多人在一起吃東西、聊天、玩。",
         meaningEn: "party",
-        examples: ["我們週末要在家裡開派對。", "這個派對的音樂太大聲了。"],
+        examples: ["我們週末在家開派對。", "你要來我的生日派對嗎？"],
       },
       {
-        word: "變裝",
-        meaning: "穿上特別的衣服，打扮成另外一個樣子。",
-        meaningEn: "to dress up in costume",
-        examples: ["今天的活動大家都要變裝。", "他第一次變裝，覺得有點不好意思。"],
+        word: "特別",
+        meaning: "跟別的不一樣。",
+        meaningEn: "special / unusual",
+        examples: ["這家店的咖啡很特別。", "今天是很特別的日子。"],
       },
       {
         word: "扮成",
-        meaning: "打扮得像某個人或某種東西。",
+        meaning: "穿特別的衣服，看起來像別人。",
         meaningEn: "to dress up as",
-        examples: ["妹妹想扮成公主。", "老師扮成了一隻大熊，學生都笑了。"],
+        examples: ["妹妹想扮成公主。", "老師扮成大熊，學生都笑了。"],
       },
       {
         word: "南瓜燈",
-        meaning: "把南瓜挖空、刻出臉，裡面放燈的裝飾。",
+        meaning: "南瓜上面有一張臉，裡面有燈。",
         meaningEn: "jack-o'-lantern",
-        examples: ["門口放了一個很大的南瓜燈。", "我刻的南瓜燈看起來有點可怕。"],
+        examples: ["門口有一個很大的南瓜燈。", "我做的南瓜燈很好看。"],
       },
       {
         word: "糖果",
-        meaning: "甜甜的小點心，小朋友都很喜歡。",
+        meaning: "甜甜的小東西，小孩子都很喜歡。",
         meaningEn: "candy / sweets",
-        examples: ["媽媽說吃太多糖果對牙齒不好。", "他的口袋裡裝滿了糖果。"],
-      },
-      {
-        word: "鄰居",
-        meaning: "住在自己家附近的人。",
-        meaningEn: "neighbor",
-        examples: ["我的鄰居養了一隻很可愛的貓。", "搬家以後，我認識了新的鄰居。"],
-      },
-      {
-        word: "搗蛋",
-        meaning: "故意做一些讓人頭痛的小壞事。",
-        meaningEn: "to make mischief / to play tricks",
-        examples: ["這個孩子很喜歡搗蛋。", "上課的時候不要搗蛋。"],
+        examples: ["媽媽說不可以吃太多糖果。", "他的口袋裡都是糖果。"],
       },
     ],
     speaking: {
@@ -775,56 +763,56 @@ const ARTICLES = [
         {
           zh: "算我一個！",
           en: "Count me in!",
-          note: "朋友邀你一起做什麼，你想參加的時候說。",
-          noteEn: "Say this when friends invite you and you want to join.",
+          note: "朋友問你要不要一起去，你想去，就可以說。",
+          noteEn: "When friends ask if you want to come and you do, say this.",
         },
         {
           zh: "……好了",
           en: "I'll just go with…",
-          note: "放在句子最後，表示「就這樣決定吧」，語氣比較輕鬆，例如「扮成殭屍好了」。",
-          noteEn: "Put it at the end of a sentence to make a casual decision, e.g. “I'll just be a zombie.”",
+          note: "說完「好了」，就是決定了。例如：「扮成鬼好了」。",
+          noteEn: "Put it at the end to make a casual decision, e.g. “I'll just be a ghost.”",
         },
         {
           zh: "好主意！",
           en: "Good idea!",
-          note: "同意別人的想法，聽起來很有精神。",
-          noteEn: "An upbeat way to agree with someone's suggestion.",
+          note: "你覺得朋友說的很好，就可以說。",
+          noteEn: "Say it when you like your friend's idea.",
         },
         {
           zh: "真的假的？",
           en: "Really? / No way!",
-          note: "聽到讓人驚訝的消息時說，很口語，跟朋友說就好，不要用在正式場合。",
-          noteEn: "Use it when you hear surprising news. Very casual — for friends, not formal settings.",
+          note: "聽到很有意思的事，可以說。跟朋友說，不跟老師說。",
+          noteEn: "React to surprising news. Very casual — use it with friends, not teachers.",
         },
         {
           zh: "超好玩的！",
           en: "Super fun!",
-          note: "「超」就是「非常」，年輕人很常用：超好吃、超可愛、超累。",
-          noteEn: "“超” means “very”; young people use it all the time: 超好吃, 超可愛, 超累.",
+          note: "「超」就是「很」：超好吃、超可愛、超累。",
+          noteEn: "“超” means “very”: 超好吃, 超可愛, 超累.",
         },
         {
           zh: "不見不散！",
-          en: "See you there — don't be late!",
-          note: "約好時間地點以後說，意思是「沒見到你，我就不走」。",
-          noteEn: "Said after making plans: “I won't leave until I see you.”",
+          en: "See you there!",
+          note: "說好時間、地方以後說，意思是：我們一定要見面！",
+          noteEn: "Said after making plans: “We'll definitely meet — I'll wait for you!”",
         },
       ],
       rolePlay: [
         {
-          zh: "兩個人一組：一個人邀請對方去萬聖節派對，對方用「算我一個！」或「不好意思，那天我沒有空」回答。",
-          en: "In pairs: one person invites the other to a Halloween party; the other answers with “算我一個！” or “Sorry, I'm not free that day.”",
+          zh: "兩個人一起練習：一個人問「你要不要去萬聖節派對？」，一個人說「算我一個！」或「不好意思，我沒有空。」",
+          en: "In pairs: one person asks “Do you want to go to the Halloween party?”; the other answers “Count me in!” or “Sorry, I'm not free.”",
         },
         {
-          zh: "說說看：你想扮成什麼？用「我打算扮成……，因為……」說一說。",
-          en: "Tell us: what would you dress up as? Use “我打算扮成……，因為……”.",
+          zh: "你想扮成什麼？用「我打算扮成……」說一說。",
+          en: "What would you dress up as? Use “我打算扮成……”.",
         },
         {
-          zh: "同學說一件有趣的事，你用「真的假的？」回應，再問一個問題。",
-          en: "A classmate shares something interesting; react with “真的假的？” and ask a follow-up question.",
+          zh: "同學說一件事，你說「真的假的？」，再問一個問題。",
+          en: "A classmate tells you something; say “真的假的？” and ask one question.",
         },
         {
-          zh: "在你的國家，萬聖節的時候大家會做什麼？跟台灣一樣嗎？",
-          en: "What do people do for Halloween in your country? Is it the same as in Taiwan?",
+          zh: "你的國家過萬聖節嗎？大家會做什麼？",
+          en: "Do people celebrate Halloween in your country? What do they do?",
         },
       ],
     },
