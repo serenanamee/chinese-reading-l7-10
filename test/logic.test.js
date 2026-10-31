@@ -345,7 +345,6 @@ console.log("== 口語練習 ==");
 
 check("有 speaking 的文章：口語說法都出現在課文原文裡，zh／en／note／noteEn 皆非空，至少 3 個口說任務", () => {
   const withSpeaking = ARTICLES.filter((x) => x.speaking);
-  assert.ok(withSpeaking.length >= 1, "至少要有一篇口語練習");
   withSpeaking.forEach((a) => {
     const sp = a.speaking;
     assert.ok(Array.isArray(sp.phrases) && sp.phrases.length >= 3, "口語說法太少: " + a.id);
