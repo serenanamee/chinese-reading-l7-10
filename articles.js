@@ -818,6 +818,57 @@ const ARTICLES = [
       },
     ],
   },
+  // ---------- 澳洲小故事（學生在課堂上分享的內容，改寫成第一冊程度，讓學生練習用中文說自己的故事） ----------
+  {
+    id: "au1-melbourne-casino",
+    tier: "culture",
+    category: "文化探索．澳洲小故事",
+    title: "墨爾本的賭場",
+    titleEn: "The Casino in Melbourne",
+    text:
+      "我住在墨爾本。一九八九年，墨爾本的賭場開了。" +
+      "那個時候，去賭場的人，百分之八十到九十都是澳洲人。" +
+      "可是現在不一樣了，去賭場的人，很多都是中國人。" +
+      "新聞說，有些人來澳洲的賭場洗錢。",
+    vocab: [
+      {
+        word: "賭場",
+        meaning: "玩錢的地方。去了以後，錢可能變多，也可能變少。",
+        meaningEn: "casino",
+        examples: ["我沒去過賭場。", "這家賭場很大，晚上人很多。"],
+      },
+      {
+        word: "那個時候",
+        meaning: "說以前的一個時間。",
+        meaningEn: "at that time / back then",
+        examples: ["我十歲的時候住在台北，那個時候我不會說中文。", "那個時候我還是學生。"],
+      },
+      {
+        word: "百分之",
+        meaning: "一百個裡面有幾個。例如百分之十，就是一百個裡面有十個。",
+        meaningEn: "percent (百分之八十 = 80%)",
+        examples: ["我們班百分之五十是男生。", "明天百分之九十會下雨。"],
+      },
+      {
+        word: "不一樣",
+        meaning: "不是一樣的。",
+        meaningEn: "different",
+        examples: ["台灣的冬天跟澳洲的冬天不一樣。", "我們兩個人喜歡的東西不一樣。"],
+      },
+      {
+        word: "新聞",
+        meaning: "電視、手機上告訴大家今天有什麼事。",
+        meaningEn: "news",
+        examples: ["我每天早上看新聞。", "新聞說明天會下雨。"],
+      },
+      {
+        word: "洗錢",
+        meaning: "不好的錢，換成看起來沒問題的錢。",
+        meaningEn: "to launder money / money laundering",
+        examples: ["洗錢是不對的事。", "警察找到了洗錢的人。"],
+      },
+    ],
+  },
 ];
 
 if (typeof module !== "undefined" && module.exports) {
