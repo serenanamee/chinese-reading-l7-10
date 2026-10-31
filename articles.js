@@ -30,7 +30,7 @@ const ARTICLES = [
     vocab: [
       {
         word: "有空",
-        meaning: "有空閒的時間，可以做別的事。",
+        meaning: "有時間，可以做別的事。",
         meaningEn: "to be free / to have time",
         examples: ["你明天下午有空嗎？", "我今天晚上沒有空，改天再約。"],
       },
@@ -42,13 +42,13 @@ const ARTICLES = [
       },
       {
         word: "見面",
-        meaning: "約好時間、地點，兩個人碰面。",
+        meaning: "說好時間、地方，兩個人在一起。",
         meaningEn: "to meet up (with someone)",
         examples: ["我們明天在學校見面吧。", "好久沒見面了，我很想你。"],
       },
       {
         word: "開始",
-        meaning: "一件事情的第一步，事情要進行了。",
+        meaning: "一件事的第一步。",
         meaningEn: "to begin / to start",
         examples: ["電影八點開始。", "我們下個星期開始上課。"],
       },
@@ -60,7 +60,7 @@ const ARTICLES = [
       },
       {
         word: "沒問題",
-        meaning: "答應對方，表示自己可以做到。",
+        meaning: "我可以，我會做。",
         meaningEn: "no problem / sure",
         examples: ["明天幫你搬東西，沒問題！", "這件事交給我，沒問題的。"],
       },
@@ -122,25 +122,25 @@ const ARTICLES = [
       },
       {
         word: "小吃",
-        meaning: "分量不大、價格不貴的地方特色食物。",
+        meaning: "不貴、很好吃的東西，每個地方都不一樣。",
         meaningEn: "local snack food",
         examples: ["夜市裡有很多好吃的小吃。", "臺南的小吃在臺灣很有名。"],
       },
       {
         word: "老街",
-        meaning: "有很多老房子、有歷史的街道。",
+        meaning: "有很多老房子的街。",
         meaningEn: "old street (historic shopping street)",
         examples: ["假日老街上有很多遊客。", "這條老街已經有一百多年的歷史。"],
       },
       {
         word: "夕陽",
-        meaning: "傍晚時，太陽快要下山的樣子。",
+        meaning: "晚上以前，太陽快要下山的時候。",
         meaningEn: "sunset",
         examples: ["海邊的夕陽很美。", "我們爬山去看夕陽吧。"],
       },
       {
         word: "好玩",
-        meaning: "做這件事讓人覺得開心、有趣。",
+        meaning: "很有意思，做的時候很開心。",
         meaningEn: "fun / enjoyable",
         examples: ["這個遊戲很好玩，你也試試看。", "臺灣有很多好玩的地方。"],
       },
@@ -191,25 +191,25 @@ const ARTICLES = [
     vocab: [
       {
         word: "暑假",
-        meaning: "夏天學校放假、不用上課的期間。",
+        meaning: "夏天學校放假，不用上課的時候。",
         meaningEn: "summer vacation",
         examples: ["暑假有兩個月，你有什麼計畫？", "今年暑假我要打工賺錢。"],
       },
       {
         word: "除了",
-        meaning: "不算某個東西或情況以外，另外還有別的。",
+        meaning: "這個以外，還有別的。",
         meaningEn: "besides / in addition to",
-        examples: ["除了中文以外，他還會說日文。", "除了下雨以外，什麼都不能阻止我們出門。"],
+        examples: ["除了中文以外，他還會說日文。", "除了芒果以外，我也喜歡鳳梨。"],
       },
       {
         word: "決定",
-        meaning: "經過考慮以後，選出一個答案。",
+        meaning: "想好了，選一個。",
         meaningEn: "to decide",
         examples: ["我還沒決定要買哪一件衣服。", "他決定明年去美國留學。"],
       },
       {
         word: "休息",
-        meaning: "停下手邊的事，讓身體或心情放鬆一下。",
+        meaning: "不工作，坐一下、睡一下。",
         meaningEn: "to rest",
         examples: ["工作了一整天，我需要好好休息。", "醫生說感冒的時候要多休息。"],
       },
@@ -223,13 +223,13 @@ const ARTICLES = [
         word: "愉快",
         meaning: "心情很好、很開心的樣子。",
         meaningEn: "pleasant / happy",
-        examples: ["祝你旅途愉快！", "今天的聚會大家都玩得很愉快。"],
+        examples: ["祝你週末愉快！", "今天大家都很愉快。"],
       },
     ],
     pictureStory: {
       questions: [
         {
-          zh: "圖片裡的人正在煩惱什麼？他還沒決定什麼事？",
+          zh: "圖片裡的人在想什麼？他還沒決定什麼事？",
           en: "What is the person in the picture worrying about? What haven’t they decided yet?",
         },
         {
@@ -274,35 +274,35 @@ const ARTICLES = [
         word: "芒果",
         meaning: "夏天常見的黃色水果，味道很甜。",
         meaningEn: "mango",
-        examples: ["這杯芒果冰看起來好好吃。", "芒果盛產的季節在夏天。"],
+        examples: ["這杯芒果冰看起來好好吃。", "夏天的芒果最好吃。"],
       },
       {
         word: "荔枝",
-        meaning: "外皮紅紅的、裡面是白色果肉的夏天水果。",
+        meaning: "外面紅紅的、裡面白白的夏天水果。",
         meaningEn: "lychee",
-        examples: ["荔枝的產季不長，大概只有一個多月。", "他一口氣吃了十顆荔枝。"],
+        examples: ["荔枝只有夏天有。", "他一個人吃了十個荔枝。"],
       },
       {
         word: "鳳梨",
-        meaning: "外皮有刺、味道又酸又甜的水果。",
+        meaning: "外面有刺、又酸又甜的水果。",
         meaningEn: "pineapple",
-        examples: ["鳳梨酥是臺灣很有名的伴手禮。", "這家店的鳳梨汁很受歡迎。"],
+        examples: ["鳳梨酥是臺灣很有名的點心。", "這家店的鳳梨汁很受歡迎。"],
       },
       {
         word: "受歡迎",
         meaning: "很多人喜歡。",
         meaningEn: "popular / well-liked",
-        examples: ["這位老師教得很好，在學生中很受歡迎。", "這款手機很新，一上市就很受歡迎。"],
+        examples: ["這家店很受歡迎，每天都有很多人。", "這個歌手很受歡迎。"],
       },
       {
         word: "水果店",
-        meaning: "專門賣水果的商店。",
+        meaning: "賣水果的店。",
         meaningEn: "fruit shop",
-        examples: ["巷口新開了一家水果店。", "我常去那家水果店買當季水果。"],
+        examples: ["我家旁邊有一家水果店。", "我常去那家水果店買芒果。"],
       },
       {
         word: "香",
-        meaning: "聞起來或吃起來的味道很好聞、很誘人。",
+        meaning: "味道很好，很想吃。",
         meaningEn: "fragrant / aromatic",
         examples: ["這碗湯聞起來好香。", "剛煮好的白飯很香。"],
       },
@@ -345,33 +345,33 @@ const ARTICLES = [
     title: "見面要不要擁抱？",
     titleEn: "Should You Hug When You Meet?",
     text:
-      "在有些地方，朋友見面會擁抱，或是親一下臉頰，表示很高興看到對方；可是在另外一些地方，" +
-      "人們見面只會點頭或握手，覺得擁抱太親密了。其實，打招呼的方式沒有對錯，只是每個地方的習慣不一樣，" +
-      "了解對方的習慣，才不會覺得奇怪。",
+      "在有些國家，朋友見面的時候會擁抱，因為很高興看到朋友。" +
+      "可是在台灣，很多人見面只點頭，說「你好」，他們覺得擁抱太親密了。" +
+      "每個國家的習慣不一樣，沒有對，也沒有錯。知道別人的習慣，你就不會覺得奇怪了。",
     vocab: [
       {
         word: "擁抱",
         meaning: "兩個人用手抱在一起。",
         meaningEn: "to hug / to embrace",
-        examples: ["久別重逢，他們緊緊擁抱了一下。", "在機場，媽媽給了我一個擁抱。"],
+        examples: ["在機場，媽媽給了我一個擁抱。", "好朋友見面，常常會擁抱。"],
       },
       {
         word: "親密",
         meaning: "兩個人很好、很近。",
         meaningEn: "intimate / close",
-        examples: ["他們兩個從小一起長大，感情很親密。", "這是我最親密的朋友。"],
+        examples: ["他們兩個是很親密的朋友。", "我跟姐姐很親密。"],
       },
       {
         word: "習慣",
         meaning: "常常做、每天都這樣做的事。",
         meaningEn: "habit / custom",
-        examples: ["每個國家的飲食習慣都不太一樣。", "我習慣早上喝一杯咖啡。"],
+        examples: ["我習慣早上喝一杯咖啡。", "每個國家的習慣都不太一樣。"],
       },
       {
         word: "點頭",
         meaning: "頭往下動一下，意思是「好」或「你好」。",
         meaningEn: "to nod",
-        examples: ["老師說完，他點頭表示明白了。", "他對我笑了笑，點了點頭。"],
+        examples: ["老師問「懂了嗎？」，他點頭。", "他看到我，就點頭說「你好」。"],
       },
     ],
   },
@@ -382,33 +382,33 @@ const ARTICLES = [
     title: "怎麼稱呼比較禮貌？",
     titleEn: "What’s the Polite Way to Address Someone?",
     text:
-      "在中文裡，稱呼別人常常要加上職稱，像是「王老師」、「陳經理」，直接叫名字會覺得不禮貌；" +
-      "可是在有些國家，就算是老闆，同事也可以直接叫他的名字，覺得這樣比較親近。所以剛認識新朋友的時候，" +
-      "最好先問問看，應該怎麼稱呼對方。",
+      "在台灣，稱呼別人的時候，常常要說職稱，像是「王老師」、「陳經理」。" +
+      "只叫名字，有人會覺得不禮貌。可是在有些國家，同事都叫老闆的名字，覺得這樣比較親近。" +
+      "所以認識新朋友的時候，最好先問問看：「我應該怎麼稱呼您？」",
     vocab: [
       {
         word: "稱呼",
         meaning: "叫別人的方法，例如「王老師」。",
         meaningEn: "form of address / to address someone",
-        examples: ["我不知道該怎麼稱呼他。", "同事之間，稱呼可以隨便一點。"],
+        examples: ["我不知道怎麼稱呼他。", "你可以稱呼我小王。"],
       },
       {
         word: "職稱",
         meaning: "工作的名字，例如經理、老師。",
         meaningEn: "job title",
-        examples: ["名片上通常會寫姓名跟職稱。", "他升職以後，職稱也改變了。"],
+        examples: ["名片上有他的名字和職稱。", "他的職稱是經理。"],
       },
       {
         word: "禮貌",
         meaning: "對別人很好，會說「請」、「謝謝」。",
         meaningEn: "polite / courteous",
-        examples: ["跟長輩說話要有禮貌。", "他是一個很有禮貌的年輕人。"],
+        examples: ["跟老師說話要有禮貌。", "他是一個很有禮貌的學生。"],
       },
       {
         word: "親近",
         meaning: "兩個人很好，常常在一起。",
         meaningEn: "close / friendly",
-        examples: ["她跟班上同學都很親近。", "多聊聊天，會讓彼此更親近。"],
+        examples: ["她跟班上的同學都很親近。", "常常一起吃飯，我們就更親近了。"],
       },
     ],
   },
@@ -419,33 +419,33 @@ const ARTICLES = [
     title: "送禮物要注意什麼？",
     titleEn: "What to Watch Out for When Giving Gifts",
     text:
-      "在台灣，送禮物的時候，數字也有意義：送禮通常不送四個，因為「四」聽起來很像「死」；" +
-      "送禮物也很少送鐘，因為「送鐘」聽起來像「送終」。這些習慣聽起來有點奇怪，但是了解以後，" +
-      "你就不會不小心送錯禮物了。",
+      "在台灣，送禮物的時候，數字也有意義。送禮物通常不送四個，因為「四」聽起來很像「死」。" +
+      "也很少人送鐘，因為「送鐘」聽起來像「送終」，意思是人死了。" +
+      "你可能覺得這些習慣很奇怪，可是知道了以後，就不會不小心送錯禮物了。",
     vocab: [
       {
         word: "意義",
         meaning: "一件事真正的意思。",
         meaningEn: "meaning / significance",
-        examples: ["這份禮物對他來說有特別的意義。", "了解節日的意義，才知道為什麼要慶祝。"],
+        examples: ["這個禮物對我有特別的意義。", "這個數字有什麼意義？"],
       },
       {
         word: "通常",
         meaning: "很多時候都是這樣。",
         meaningEn: "usually / normally",
-        examples: ["他通常七點就起床了。", "台灣的夏天通常很熱。"],
+        examples: ["他通常七點起床。", "台灣的夏天通常很熱。"],
       },
       {
         word: "奇怪",
         meaning: "跟平常不一樣，你不懂為什麼。",
         meaningEn: "strange / odd",
-        examples: ["這件事聽起來很奇怪。", "他今天怪怪的，好像有什麼奇怪的事發生了。"],
+        examples: ["這件事很奇怪。", "他今天很奇怪，都不說話。"],
       },
       {
         word: "不小心",
         meaning: "不是想這樣做，可是做錯了。",
         meaningEn: "carelessly / by accident",
-        examples: ["我不小心把水打翻了。", "他不小心說錯了朋友的名字。"],
+        examples: ["對不起，我不小心拿了你的筆。", "他不小心說錯了朋友的名字。"],
       },
     ],
   },
@@ -456,33 +456,33 @@ const ARTICLES = [
     title: "去朋友家作客",
     titleEn: "Visiting a Friend’s Home",
     text:
-      "第一次去朋友家作客，帶一點小禮物是不錯的選擇，像是水果或是點心。進門以前，" +
-      "最好先問一下要不要脫鞋子，因為很多台灣人在家裡是不穿鞋的。吃飯的時候，主人請你多吃一點，" +
-      "你可以客氣地說「我吃飽了」，不用勉強自己。",
+      "第一次去朋友家作客，可以帶一點小禮物，像是水果或點心。" +
+      "進門以前，最好先問一下要不要脫鞋子，因為很多台灣人在家裡不穿鞋。" +
+      "吃飯的時候，主人常常說「多吃一點！」。如果你已經吃飽了，可以說：「謝謝，我吃飽了。」這樣很客氣。",
     vocab: [
       {
         word: "作客",
         meaning: "去別人家，當客人。",
         meaningEn: "to be a guest (at someone’s home)",
-        examples: ["週末我要去阿姨家作客。", "第一次去老師家作客，覺得有點緊張。"],
+        examples: ["週末我要去阿姨家作客。", "第一次去老師家作客，我有點緊張。"],
       },
       {
         word: "脫鞋子",
         meaning: "鞋子不穿了，放在門口。",
         meaningEn: "to take off one’s shoes",
-        examples: ["進屋前記得脫鞋子。", "他習慣一進門就脫鞋子。"],
+        examples: ["進門以前，請脫鞋子。", "在日本，進門以前也要脫鞋子。"],
       },
       {
         word: "主人",
         meaning: "在家裡請大家吃飯的人。",
         meaningEn: "host",
-        examples: ["主人準備了很多好吃的菜招待我們。", "身為主人，他很照顧每一位客人。"],
+        examples: ["主人做了很多好吃的菜。", "主人很高興我們來他家。"],
       },
       {
         word: "客氣",
         meaning: "對別人很有禮貌。",
         meaningEn: "polite / modest",
-        examples: ["不用這麼客氣，就像在自己家一樣。", "他對每個人都很客氣。"],
+        examples: ["不用客氣，請多吃一點。", "他對每個人都很客氣。"],
       },
     ],
   },
@@ -493,32 +493,33 @@ const ARTICLES = [
     title: "筷子不能怎麼用？",
     titleEn: "Chopstick Etiquette: What Not to Do",
     text:
-      "用筷子吃飯的時候，有幾件事最好不要做：不要把筷子直直地插在飯中間，因為那讓人想到拜拜用的香；" +
-      "也不要用筷子指著別人，這樣不太禮貌。如果不小心做錯了，只要笑一笑，說聲對不起，大家都會理解的。",
+      "用筷子吃飯的時候，有幾件事最好不要做。" +
+      "第一，筷子不要插在飯上，因為這樣很像拜拜用的香。第二，不要用筷子指別人，這樣不禮貌。" +
+      "如果你不小心做錯了，說一聲「對不起」就好，大家都會理解。",
     vocab: [
       {
         word: "筷子",
         meaning: "吃飯用的兩根長長的東西。",
         meaningEn: "chopsticks",
-        examples: ["他還不太會用筷子。", "請幫我拿一雙筷子。"],
+        examples: ["他還不太會用筷子。", "請給我一雙筷子。"],
       },
       {
         word: "插",
         meaning: "長長的東西放到裡面去。",
         meaningEn: "to insert / to stick into",
-        examples: ["她把花插進花瓶裡。", "路口插了一支新的路牌。"],
+        examples: ["花插在杯子裡，很好看。", "牙刷插在杯子裡。"],
       },
       {
         word: "指",
         meaning: "用手對著一個人或一個地方。",
         meaningEn: "to point (at/toward)",
-        examples: ["他指著地圖，說明怎麼走。", "用手指著別人不太禮貌。"],
+        examples: ["他指著地圖說：「我們在這裡。」", "不要用手指別人。"],
       },
       {
         word: "理解",
         meaning: "懂別人的意思。",
         meaningEn: "to understand",
-        examples: ["謝謝你理解我的困難。", "這件事有點複雜，我需要時間理解。"],
+        examples: ["謝謝你的理解。", "這句話我不太理解。"],
       },
     ],
   },
@@ -529,32 +530,33 @@ const ARTICLES = [
     title: "誰付錢？",
     titleEn: "Who Pays the Bill?",
     text:
-      "在台灣，朋友一起吃飯，常常會搶著付錢，這叫做「搶著付帳」；比較少像有些國家一樣，各付各的。" +
-      "如果你是被請客的人，下次可以換你請客，這樣才不會覺得不好意思。",
+      "在台灣，朋友一起吃飯，常常搶著付帳，大家都想請客。" +
+      "在有些國家，大家吃完飯，常常自己付自己的。" +
+      "如果這次朋友請客，下次你可以請他，這樣大家都不會不好意思。",
     vocab: [
       {
         word: "搶",
         meaning: "很快去做，想比別人先做。",
         meaningEn: "to rush to do / to compete for",
-        examples: ["大家都搶著幫忙搬東西。", "他每次都搶著發言。"],
+        examples: ["大家都搶著說話。", "他每次都搶著付錢。"],
       },
       {
         word: "付帳",
         meaning: "吃完飯以後給錢。",
         meaningEn: "to pay the bill",
-        examples: ["吃完飯，他堅持要付帳。", "請問可以用信用卡付帳嗎？"],
+        examples: ["吃完飯，他要付帳。", "可以用信用卡付帳嗎？"],
       },
       {
         word: "請客",
         meaning: "你給錢，朋友不用給錢。",
         meaningEn: "to treat someone (pay for them)",
-        examples: ["今天算我請客，你們不用付錢。", "謝謝你上次請客，下次換我。"],
+        examples: ["今天我請客，你們不用付錢。", "謝謝你上次請客，下次我請你。"],
       },
       {
         word: "不好意思",
         meaning: "心裡有一點不舒服，不知道怎麼辦。",
         meaningEn: "embarrassed / to feel awkward",
-        examples: ["讓你破費，真不好意思。", "他不好意思在大家面前唱歌。"],
+        examples: ["不好意思，我來晚了。", "他不好意思在大家前面唱歌。"],
       },
     ],
   },
@@ -565,33 +567,33 @@ const ARTICLES = [
     title: "遲到算不算沒關係？",
     titleEn: "Is Being Late a Big Deal?",
     text:
-      "對某些人來說，約會遲到五分鐘、十分鐘沒什麼關係；可是對另外一些人來說，準時非常重要，" +
-      "遲到就是不尊重別人。所以出國旅行，或是跟不同地方的人約時間，最好先問清楚，" +
-      "對方覺得幾點才算「準時」。",
+      "有些人覺得，見面遲到五分鐘、十分鐘沒關係。" +
+      "可是也有人覺得準時很重要，遲到就是不尊重別人。" +
+      "所以跟不同國家的人約時間的時候，最好先問一下：「幾點到才算準時？」",
     vocab: [
       {
         word: "遲到",
         meaning: "比說好的時間晚到。",
         meaningEn: "to be late",
-        examples: ["今天塞車，我上班遲到了。", "開會不可以遲到。"],
+        examples: ["今天車很多，我上課遲到了。", "開會不可以遲到。"],
       },
       {
         word: "準時",
         meaning: "在說好的時間到，不早也不晚。",
         meaningEn: "on time / punctual",
-        examples: ["火車會準時出發，請不要遲到。", "他做事一向很準時。"],
+        examples: ["火車會準時開，請不要遲到。", "他每天都準時上班。"],
       },
       {
         word: "尊重",
         meaning: "覺得別人很重要，對別人很好。",
         meaningEn: "to respect",
-        examples: ["我們應該尊重不同的文化。", "他很尊重每一位同事的意見。"],
+        examples: ["我們應該尊重別人的習慣。", "他很尊重他的老師。"],
       },
       {
         word: "約時間",
         meaning: "跟別人說好什麼時候見面。",
         meaningEn: "to make an appointment / arrange a time",
-        examples: ["我們先約時間，再決定地點。", "跟醫生約時間看診。"],
+        examples: ["我們先約時間，再決定去哪裡。", "我想跟醫生約時間。"],
       },
     ],
   },
@@ -602,32 +604,33 @@ const ARTICLES = [
     title: "台灣人怎麼安排時間？",
     titleEn: "How Do Taiwanese People Manage Time?",
     text:
-      "台灣人上班常常很早到公司，可是下班卻常常晚走，因為主管還沒走，員工也不好意思先走，" +
-      "沒辦法安排自己的時間。這幾年，越來越多公司開始重視員工的休息時間，希望大家準時上班，也能準時下班。",
+      "很多台灣人上班很早到公司，可是下班常常很晚才走。" +
+      "因為主管還沒走，員工也不好意思先走，所以很難安排自己的時間。" +
+      "這幾年，越來越多公司開始重視員工的休息時間，希望大家準時上班，也準時下班。",
     vocab: [
       {
         word: "安排",
         meaning: "先想好什麼時候做什麼。",
         meaningEn: "to arrange / to schedule",
-        examples: ["這次旅行的行程由我來安排。", "老師幫我們安排了新的座位。"],
+        examples: ["這次旅行，我來安排。", "週末你有什麼安排？"],
       },
       {
         word: "主管",
         meaning: "公司裡告訴你要做什麼的人。",
         meaningEn: "supervisor / manager",
-        examples: ["這件事要先問過主管。", "新來的主管人很好。"],
+        examples: ["這件事要先問主管。", "我們的主管人很好。"],
       },
       {
         word: "員工",
         meaning: "在公司工作的人。",
         meaningEn: "employee",
-        examples: ["這家公司有一百多位員工。", "公司很重視員工的意見。"],
+        examples: ["這家公司有一百多個員工。", "員工都很喜歡這個老闆。"],
       },
       {
         word: "重視",
         meaning: "覺得很重要。",
         meaningEn: "to value / to attach importance to",
-        examples: ["這家公司很重視員工的健康。", "他非常重視跟家人相處的時間。"],
+        examples: ["這家公司很重視員工的健康。", "他很重視家人。"],
       },
     ],
   },
@@ -638,33 +641,33 @@ const ARTICLES = [
     title: "紅包裡的秘密",
     titleEn: "The Secret Behind Red Envelopes",
     text:
-      "過年的時候，長輩會給晚輩紅包，裡面裝的是「壓歲錢」，希望晚輩平平安安長大。" +
-      "紅包的錢最好是偶數，不要是奇數，因為偶數比較吉利。收到紅包的時候，別忘了說聲「謝謝」，" +
-      "這是最基本的禮貌。",
+      "過年的時候，長輩會給晚輩紅包，紅包裡有錢，叫做「壓歲錢」。" +
+      "紅包裡的錢最好是偶數，像是兩千、六百，因為偶數比較吉利。" +
+      "拿到紅包的時候，別忘了說「謝謝」，這是很重要的禮貌。",
     vocab: [
       {
         word: "長輩",
         meaning: "家裡年紀比你大的人，例如爸爸、媽媽、爺爺。",
         meaningEn: "elders (in the family)",
-        examples: ["過年要跟長輩拜年。", "跟長輩說話要有禮貌。"],
+        examples: ["過年要跟長輩說「新年快樂」。", "跟長輩說話要有禮貌。"],
       },
       {
         word: "晚輩",
         meaning: "家裡年紀比你小的人，例如孩子。",
         meaningEn: "younger generation (in the family)",
-        examples: ["長輩很疼愛家裡的晚輩。", "身為晚輩，要尊敬長輩。"],
+        examples: ["爺爺很喜歡家裡的晚輩。", "我是家裡最小的晚輩。"],
       },
       {
         word: "偶數",
         meaning: "二、四、六、八、十這樣的數字。",
         meaningEn: "even number",
-        examples: ["二和四都是偶數。", "送禮的數量最好是偶數。"],
+        examples: ["二和四都是偶數。", "送禮物的時候，最好送偶數。"],
       },
       {
         word: "吉利",
         meaning: "很好，會有好事來。",
         meaningEn: "auspicious / lucky",
-        examples: ["紅色在華人文化裡代表吉利。", "大家都喜歡吉利的數字。"],
+        examples: ["紅色是很吉利的顏色。", "大家都喜歡吉利的數字。"],
       },
     ],
   },
@@ -675,32 +678,33 @@ const ARTICLES = [
     title: "生日怎麼慶祝？",
     titleEn: "How Do People Celebrate Birthdays?",
     text:
-      "在台灣，過生日常常會吃長壽麵，因為麵條長長的，代表長命百歲；吃麵的時候，" +
-      "最好不要把麵條咬斷。除了長壽麵以外，現在也有很多人跟西方一樣，買蛋糕、唱生日快樂歌，一起慶祝。",
+      "在台灣，過生日的時候，很多人會吃長壽麵。麵很長，代表可以活很久。" +
+      "吃麵的時候，最好不要咬斷麵。" +
+      "現在也有很多人買蛋糕、唱生日快樂歌，大家一起慶祝。",
     vocab: [
       {
         word: "慶祝",
         meaning: "有好事的時候，大家一起高興。",
         meaningEn: "to celebrate",
-        examples: ["我們一起慶祝畢業吧！", "全家人一起慶祝新年。"],
+        examples: ["我們一起慶祝你的生日吧！", "全家人一起慶祝新年。"],
       },
       {
         word: "長壽",
         meaning: "活很久、年紀很大。",
         meaningEn: "longevity / long life",
-        examples: ["祝爺爺身體健康、長壽。", "多運動有助於長壽。"],
+        examples: ["祝爺爺身體健康、長壽。", "多運動可以長壽。"],
       },
       {
         word: "咬斷",
         meaning: "用牙齒咬，東西變成兩個。",
         meaningEn: "to bite through / bite in two",
-        examples: ["小心，不要咬斷筷子。", "他一口就把餅乾咬斷了。"],
+        examples: ["小心，不要咬斷筷子。", "他一口就咬斷了餅乾。"],
       },
       {
         word: "代表",
         meaning: "一個東西有另外一個意思，例如紅色代表好事。",
         meaningEn: "to represent / to symbolize",
-        examples: ["紅色在這裡代表喜氣。", "白鴿代表和平。"],
+        examples: ["紅色代表快樂。", "這個數字代表什麼？"],
       },
     ],
   },
@@ -711,32 +715,32 @@ const ARTICLES = [
     title: "排隊的文化",
     titleEn: "The Culture of Queuing",
     text:
-      "在台灣，不管是等公車、買東西，還是等電梯，大家都習慣排隊，按照順序一個接著一個，不喜歡插隊。" +
-      "如果你不小心插到別人前面，最好說一聲「不好意思」，對方通常也不會生氣。",
+      "在台灣，等公車、買東西、等電梯的時候，大家都習慣排隊，一個一個照順序來，不喜歡別人插隊。" +
+      "如果你不小心站到別人前面，說一聲「不好意思」就好，別人通常不會生氣。",
     vocab: [
       {
         word: "排隊",
         meaning: "大家一個一個站好，一個一個來。",
         meaningEn: "to queue / to line up",
-        examples: ["買票的人很多，要排隊等一下。", "他們排隊排了半個小時。"],
+        examples: ["買票的人很多，要排隊。", "我們排隊排了半個小時。"],
       },
       {
         word: "插隊",
         meaning: "不排隊，站到別人前面。",
         meaningEn: "to cut in line",
-        examples: ["請不要插隊，大家都在排隊。", "他插隊被後面的人提醒了。"],
+        examples: ["請不要插隊。", "他插隊，後面的人很生氣。"],
       },
       {
         word: "順序",
         meaning: "誰第一、誰第二、誰第三。",
         meaningEn: "order / sequence",
-        examples: ["請照順序進場。", "這些步驟的順序不能弄錯。"],
+        examples: ["請照順序進去。", "我們照順序一個一個說。"],
       },
       {
         word: "生氣",
         meaning: "不高興。",
         meaningEn: "angry",
-        examples: ["他因為遲到而生氣。", "不要生氣，這只是誤會。"],
+        examples: ["他今天很生氣。", "不要生氣，對不起。"],
       },
     ],
   },
@@ -747,32 +751,33 @@ const ARTICLES = [
     title: "在捷運上不能做的事",
     titleEn: "Things You Shouldn’t Do on the MRT",
     text:
-      "搭捷運的時候，車廂裡不能吃東西、喝飲料，連口香糖也不行；博愛座是留給老人、孕婦、" +
-      "行動不方便的人坐的，就算車廂很空，很多人也不會隨便坐上去。",
+      "在台北搭捷運的時候，車廂裡不能吃東西、喝飲料，口香糖也不可以。" +
+      "車廂裡有一些位子是給老人、孕婦和身體不舒服的人坐的。" +
+      "車廂裡人很少的時候，很多人也不會隨便坐這些位子。",
     vocab: [
       {
         word: "車廂",
         meaning: "火車、捷運裡，人坐的地方。",
         meaningEn: "train car / carriage",
-        examples: ["這節車廂人很多。", "請往車廂中間走。"],
+        examples: ["這個車廂人很多。", "我們在第三個車廂。"],
       },
       {
         word: "口香糖",
         meaning: "可以一直咬，可是不吃下去的糖。",
         meaningEn: "chewing gum",
-        examples: ["他嘴裡一直嚼著口香糖。", "捷運上不可以嚼口香糖。"],
+        examples: ["你要吃口香糖嗎？", "捷運上不可以吃口香糖。"],
       },
       {
         word: "孕婦",
         meaning: "肚子裡有小孩的媽媽。",
         meaningEn: "pregnant woman",
-        examples: ["博愛座要讓給孕婦坐。", "這位孕婦快要生了。"],
+        examples: ["這個位子是給孕婦坐的。", "那位孕婦快要生小孩了。"],
       },
       {
         word: "隨便",
         meaning: "不想很多，怎麼樣都可以。",
         meaningEn: "casually / carelessly / whatever",
-        examples: ["不要隨便亂丟垃圾。", "晚餐吃什麼都可以，我隨便。"],
+        examples: ["晚餐吃什麼都可以，我隨便。", "不要隨便丟垃圾。"],
       },
     ],
   },
@@ -783,33 +788,33 @@ const ARTICLES = [
     title: "台灣人愛說「加油」",
     titleEn: "Why Taiwanese People Love Saying “Jiāyóu”",
     text:
-      "「加油」這兩個字，台灣人幾乎每天都會用到：考試前跟朋友說「加油」，比賽的時候幫選手加油，" +
-      "難過的時候也可以說「加油，你可以的」。這句話不需要翻譯成「加汽油」，" +
-      "而是表示「你可以做到，我支持你」的意思。",
+      "台灣人幾乎每天都說「加油」。朋友考試以前，可以跟他說「加油」；" +
+      "看比賽的時候，大家一起幫選手加油；朋友不開心的時候，也可以說「加油，你可以的！」。" +
+      "「加油」不是「加汽油」，是「我支持你」的意思，很難翻譯成英文。",
     vocab: [
       {
         word: "加油",
         meaning: "朋友考試、比賽以前，你可以跟他說的話。",
         meaningEn: "to cheer someone on / “go for it”",
-        examples: ["比賽開始了，大家一起幫他加油！", "考試前，媽媽跟我說「加油」。"],
+        examples: ["比賽開始了，大家一起加油！", "明天考試，加油！"],
       },
       {
         word: "幾乎",
         meaning: "差不多都是。",
         meaningEn: "almost / nearly",
-        examples: ["他幾乎每天都運動。", "這件事幾乎沒有人知道。"],
+        examples: ["他幾乎每天都運動。", "我幾乎都懂了。"],
       },
       {
         word: "翻譯",
         meaning: "中文說成英文，或英文說成中文。",
         meaningEn: "to translate",
-        examples: ["請幫我把這句話翻譯成英文。", "他是專業的翻譯人員。"],
+        examples: ["這句話怎麼翻譯成英文？", "我的朋友是翻譯。"],
       },
       {
         word: "支持",
         meaning: "你想做的事，我覺得很好，我會幫你。",
         meaningEn: "to support",
-        examples: ["家人一直很支持我的決定。", "謝謝大家的支持。"],
+        examples: ["我的家人很支持我。", "謝謝大家的支持。"],
       },
     ],
   },

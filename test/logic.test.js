@@ -276,6 +276,7 @@ check("多音字校正：們 讀輕聲 men；東西（物品）、媽媽、謝�
   assert.strictEqual(ZhPinyin.toPlainPinyin("媽媽"), "mā ma");
   assert.strictEqual(ZhPinyin.toPlainPinyin("謝謝"), "xiè xie");
   assert.strictEqual(ZhPinyin.toPlainPinyin("的樣子"), "de yàng zi");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("位子"), "wèi zi");
 });
 
 check("多音字校正：得體／值得 讀 dé；副詞「地」讀 de；京都、餅乾、輩分、數量、給予", () => {
