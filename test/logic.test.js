@@ -269,6 +269,33 @@ check("生字與例句、文法例句都能安全轉成拼音 HTML（不噴錯�
   });
 });
 
+check("多音字校正：們 讀輕聲 men；東西（物品）、媽媽、謝謝、樣子 的第二字讀輕聲", () => {
+  assert.strictEqual(ZhPinyin.toPlainPinyin("我們"), "wǒ men");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("他們"), "tā men");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("買東西"), "mǎi dōng xi");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("媽媽"), "mā ma");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("謝謝"), "xiè xie");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("的樣子"), "de yàng zi");
+});
+
+check("多音字校正：得體／值得 讀 dé；副詞「地」讀 de；京都、餅乾、輩分、數量、給予", () => {
+  assert.strictEqual(ZhPinyin.toPlainPinyin("得體"), "dé tǐ");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("值得"), "zhí dé");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("客氣地說"), "kè qì de shuō");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("地點"), "dì diǎn");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("京都"), "jīng dū");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("餅乾"), "bǐng gān");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("輩分"), "bèi fèn");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("數量"), "shù liàng");
+  assert.strictEqual(ZhPinyin.toPlainPinyin("給予"), "jǐ yǔ");
+});
+
+check("片語校正（很快地／錯了）只修讀音，不會在畫面上被當成一個詞連在一起", () => {
+  const html = ZhPinyin.renderMarkup("做錯了事");
+  assert.ok(!html.includes("<ruby>錯了<rt>"), html);
+  assert.ok(html.includes("<rt>le</rt>"), html);
+});
+
 check("culture 層每篇至少有 4 個生字，且不含 grammar／pictureStory（格式對齊 chinese-chat-grid，純敘述短文＋生字）", () => {
   cultureArticles.forEach((a) => {
     assert.ok(a.vocab && a.vocab.length >= 4, "生字太少: " + a.id);
@@ -302,6 +329,27 @@ check("basic 層每篇都對應一張插畫，且插畫是合法的 <svg> 標記
 check("引導問題都能安全轉成拼音 HTML（不噴錯）", () => {
   basicArticles.forEach((a) => {
     a.pictureStory.questions.forEach((q) => {
+      assert.ok(ZhPinyin.renderMarkup(q.zh).length > 0);
+    });
+  });
+});
+
+console.log("== 口語練習 ==");
+
+check("有 speaking 的文章：口語說法都出現在課文原文裡，zh／en／note／noteEn 皆非空，至少 3 個口說任務", () => {
+  const withSpeaking = ARTICLES.filter((x) => x.speaking);
+  assert.ok(withSpeaking.length >= 1, "至少要有一篇口語練習");
+  withSpeaking.forEach((a) => {
+    const sp = a.speaking;
+    assert.ok(Array.isArray(sp.phrases) && sp.phrases.length >= 3, "口語說法太少: " + a.id);
+    sp.phrases.forEach((p) => {
+      ["zh", "en", "note", "noteEn"].forEach((k) => assert.ok(p[k] && p[k].trim(), "缺少 " + k + ": " + a.id));
+      const core = p.zh.replace(/……/g, "").replace(/[！？。，]+$/, "");
+      assert.ok(a.text.includes(core), "口語說法「" + core + "」沒有出現在課文: " + a.id);
+    });
+    assert.ok(Array.isArray(sp.rolePlay) && sp.rolePlay.length >= 3, "口說任務太少: " + a.id);
+    sp.rolePlay.forEach((q) => {
+      assert.ok(q.zh && q.zh.trim() && q.en && q.en.trim(), "口說任務缺中英文: " + a.id);
       assert.ok(ZhPinyin.renderMarkup(q.zh).length > 0);
     });
   });

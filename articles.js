@@ -10,6 +10,8 @@
 //   meaning 是簡明中文解釋，meaningEn 是英文對照，examples 是兩句另外新寫的範例句子（不是抄文章裡的句子）
 // - grammar（僅 basic 層）：這篇文章對應的一個文法重點，pattern 是句型公式，examples 是另外新寫的例句
 // - pictureStory（僅 basic 層）：看圖說故事引導問題，對應 illustrations.js 的插畫
+// - speaking（選填，兩層都可用）：口語練習。phrases 是課文裡出現的口語說法（zh 去掉「……」與句尾標點後必須出現在原文中），
+//   附中英文使用說明；rolePlay 是給學生兩兩練習的口說任務
 
 const ARTICLES = [
   {
@@ -701,6 +703,131 @@ const ARTICLES = [
         examples: ["紅色在這裡代表喜氣。", "白鴿代表和平。"],
       },
     ],
+  },
+  {
+    id: "c14-festival-halloween",
+    tier: "culture",
+    category: "文化探索．節日與慶祝",
+    title: "萬聖節派對，算我一個！",
+    titleEn: "Halloween Party — Count Me In!",
+    text:
+      "安娜：小明，這個星期五學校有萬聖節派對，你要不要一起去？\n" +
+      "小明：好啊，算我一個！要變裝嗎？\n" +
+      "安娜：要啊，大家都會穿得很特別。我打算扮成巫婆，你呢？\n" +
+      "小明：我還沒想好……扮成殭屍好了，又簡單又好笑。\n" +
+      "安娜：哈哈，好主意！派對上還有南瓜燈比賽，可以自己刻南瓜。\n" +
+      "小明：真的假的？聽起來超好玩的！那我們要帶什麼？\n" +
+      "安娜：帶一點糖果吧。在美國，小朋友會去敲鄰居的門，說「不給糖就搗蛋」。\n" +
+      "小明：台灣比較少人這樣做，不過現在很多學校跟百貨公司都會辦萬聖節活動。\n" +
+      "安娜：那星期五晚上六點，我們在學校門口見面，不見不散！",
+    vocab: [
+      {
+        word: "萬聖節",
+        meaning: "每年十月三十一日的西方節日，很多人會變裝、拿糖果。",
+        meaningEn: "Halloween",
+        examples: ["萬聖節快到了，商店裡都是南瓜。", "你今年萬聖節有什麼計畫？"],
+      },
+      {
+        word: "派對",
+        meaning: "很多人聚在一起吃東西、聊天、玩遊戲的活動。",
+        meaningEn: "party",
+        examples: ["我們週末要在家裡開派對。", "這個派對的音樂太大聲了。"],
+      },
+      {
+        word: "變裝",
+        meaning: "穿上特別的衣服，打扮成另外一個樣子。",
+        meaningEn: "to dress up in costume",
+        examples: ["今天的活動大家都要變裝。", "他第一次變裝，覺得有點不好意思。"],
+      },
+      {
+        word: "扮成",
+        meaning: "打扮得像某個人或某種東西。",
+        meaningEn: "to dress up as",
+        examples: ["妹妹想扮成公主。", "老師扮成了一隻大熊，學生都笑了。"],
+      },
+      {
+        word: "南瓜燈",
+        meaning: "把南瓜挖空、刻出臉，裡面放燈的裝飾。",
+        meaningEn: "jack-o'-lantern",
+        examples: ["門口放了一個很大的南瓜燈。", "我刻的南瓜燈看起來有點可怕。"],
+      },
+      {
+        word: "糖果",
+        meaning: "甜甜的小點心，小朋友都很喜歡。",
+        meaningEn: "candy / sweets",
+        examples: ["媽媽說吃太多糖果對牙齒不好。", "他的口袋裡裝滿了糖果。"],
+      },
+      {
+        word: "鄰居",
+        meaning: "住在自己家附近的人。",
+        meaningEn: "neighbor",
+        examples: ["我的鄰居養了一隻很可愛的貓。", "搬家以後，我認識了新的鄰居。"],
+      },
+      {
+        word: "搗蛋",
+        meaning: "故意做一些讓人頭痛的小壞事。",
+        meaningEn: "to make mischief / to play tricks",
+        examples: ["這個孩子很喜歡搗蛋。", "上課的時候不要搗蛋。"],
+      },
+    ],
+    speaking: {
+      phrases: [
+        {
+          zh: "算我一個！",
+          en: "Count me in!",
+          note: "朋友邀你一起做什麼，你想參加的時候說。",
+          noteEn: "Say this when friends invite you and you want to join.",
+        },
+        {
+          zh: "……好了",
+          en: "I'll just go with…",
+          note: "放在句子最後，表示「就這樣決定吧」，語氣比較輕鬆，例如「扮成殭屍好了」。",
+          noteEn: "Put it at the end of a sentence to make a casual decision, e.g. “I'll just be a zombie.”",
+        },
+        {
+          zh: "好主意！",
+          en: "Good idea!",
+          note: "同意別人的想法，聽起來很有精神。",
+          noteEn: "An upbeat way to agree with someone's suggestion.",
+        },
+        {
+          zh: "真的假的？",
+          en: "Really? / No way!",
+          note: "聽到讓人驚訝的消息時說，很口語，跟朋友說就好，不要用在正式場合。",
+          noteEn: "Use it when you hear surprising news. Very casual — for friends, not formal settings.",
+        },
+        {
+          zh: "超好玩的！",
+          en: "Super fun!",
+          note: "「超」就是「非常」，年輕人很常用：超好吃、超可愛、超累。",
+          noteEn: "“超” means “very”; young people use it all the time: 超好吃, 超可愛, 超累.",
+        },
+        {
+          zh: "不見不散！",
+          en: "See you there — don't be late!",
+          note: "約好時間地點以後說，意思是「沒見到你，我就不走」。",
+          noteEn: "Said after making plans: “I won't leave until I see you.”",
+        },
+      ],
+      rolePlay: [
+        {
+          zh: "兩個人一組：一個人邀請對方去萬聖節派對，對方用「算我一個！」或「不好意思，那天我沒有空」回答。",
+          en: "In pairs: one person invites the other to a Halloween party; the other answers with “算我一個！” or “Sorry, I'm not free that day.”",
+        },
+        {
+          zh: "說說看：你想扮成什麼？用「我打算扮成……，因為……」說一說。",
+          en: "Tell us: what would you dress up as? Use “我打算扮成……，因為……”.",
+        },
+        {
+          zh: "同學說一件有趣的事，你用「真的假的？」回應，再問一個問題。",
+          en: "A classmate shares something interesting; react with “真的假的？” and ask a follow-up question.",
+        },
+        {
+          zh: "在你的國家，萬聖節的時候大家會做什麼？跟台灣一樣嗎？",
+          en: "What do people do for Halloween in your country? Is it the same as in Taiwan?",
+        },
+      ],
+    },
   },
   {
     id: "c11-habit-queue",

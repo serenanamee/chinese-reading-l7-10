@@ -76,6 +76,39 @@
     "長輩": "zhǎng bèi",
     // 「鞋子」的「子」應讀輕聲 zi（跟「筷子」「孩子」一樣），套件預設誤讀成第三聲 zǐ
     "鞋子": "xié zi",
+    "樣子": "yàng zi",
+    "肚子": "dù zi",
+    // 「們」套件預設讀成 mén（我們→wǒ mén），複數詞尾一律輕聲 men
+    "們": "men",
+    // 疊字親屬稱謂／客套話的第二個字讀輕聲
+    "媽媽": "mā ma",
+    "爺爺": "yé ye",
+    "謝謝": "xiè xie",
+    // 「東西」當「物品」講時「西」讀輕聲（方位的「東邊西邊」才是 dōng xī），這裡的內容都是物品
+    "東西": "dōng xi",
+    // 「得」整字校正成 de 以後，讀 dé 的詞要另外列出
+    "得體": "dé tǐ",
+    "值得": "zhí dé",
+    // 其他套件預設讀錯的詞
+    "輩分": "bèi fèn",
+    "數量": "shù liàng",
+    "餅乾": "bǐng gān",
+    "京都": "jīng dū",
+    "給予": "jǐ yǔ",
+    "消息": "xiāo xí",
+  };
+
+  // 跨詞的片語校正：只用來修讀音，不登記成「詞」（不然畫面上「很快地」「錯了」會被當成一個詞連在一起顯示）
+  const PHRASE_CORRECTIONS = {
+    // 副詞詞尾「地」讀輕聲 de（地方／地點的 dì 不受影響），只列出內容裡用到的組合
+    "客氣地": "kè qì de",
+    "直直地": "zhí zhí de",
+    "很快地": "hěn kuài de",
+    "在意地": "zài yì de",
+    // 「做錯了事」套件把「了」讀成 liǎo
+    "錯了": "cuò le",
+    // 「不要是奇數」套件把「是」讀成「要是（如果）」的輕聲
+    "不要是": "bú yào shì",
   };
 
   // 常見的多字詞：讓這些詞的拼音在畫面上連在一起顯示（一個 <ruby> 一個 <rt>），
@@ -95,6 +128,11 @@
     "一起", "一樣", "一定", "一直", "已經", "常常", "通常", "有時候", "不小心",
     "什麼", "怎麼", "為什麼", "多少", "哪裡", "哪個",
     "捷運", "捷運站", "高鐵", "火車", "公車", "計程車", "門口", "門票",
+    // 避免貪婪比對把「邀請客人」切成「邀／請客／人」
+    "邀請", "客人",
+    // 避免「打扮成」被切成「打／扮成」
+    "打扮",
+    "學校", "活動", "百貨公司", "南瓜", "巫婆", "殭屍", "主意", "安娜", "小明",
   ];
 
   const WORD_SET = new Set(COMMON_WORDS);
@@ -130,7 +168,7 @@
     if (!global.pinyinPro || typeof global.pinyinPro.customPinyin !== "function") {
       throw new Error("pinyin-pro 尚未載入，請確認 vendor/pinyin-pro.min.js 有在此檔案之前被引入");
     }
-    global.pinyinPro.customPinyin(PINYIN_CORRECTIONS);
+    global.pinyinPro.customPinyin(Object.assign({}, PINYIN_CORRECTIONS, PHRASE_CORRECTIONS));
     initialized = true;
   }
 

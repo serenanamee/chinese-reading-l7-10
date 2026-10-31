@@ -31,6 +31,9 @@
   const grammarExplanation = document.getElementById("grammar-explanation");
   const grammarExplanationEn = document.getElementById("grammar-explanation-en");
   const grammarExampleList = document.getElementById("grammar-example-list");
+  const speakingSection = document.getElementById("speaking-section");
+  const speakingPhraseList = document.getElementById("speaking-phrase-list");
+  const roleplayList = document.getElementById("roleplay-list");
 
   let currentArticle = null;
   let taughtIds = new Set(ZhPrefs.getTaughtIds());
@@ -57,6 +60,8 @@
     setZh(document.getElementById("picture-label"), "看圖說故事");
     setZh(document.getElementById("grammar-label"), "文法重點");
     setZh(document.getElementById("grammar-example-label"), "例句");
+    setZh(document.getElementById("speaking-label"), "口語練習");
+    setZh(document.getElementById("roleplay-label"), "開口說說看");
     setZh(outputPlaceholder, "請從上方選擇一篇課文。");
   }
 
@@ -176,6 +181,7 @@
       vocabList.innerHTML = "";
       pictureSection.hidden = true;
       grammarSection.hidden = true;
+      speakingSection.hidden = true;
       return;
     }
     outputPlaceholder.hidden = true;
@@ -185,6 +191,56 @@
     renderVocab(article.vocab);
     renderPictureStory(article.id, article.pictureStory);
     renderGrammar(article.grammar);
+    renderSpeaking(article.speaking);
+  }
+
+  // ---------- 口語練習 ----------
+  function renderSpeaking(speaking) {
+    if (!speaking) {
+      speakingSection.hidden = true;
+      return;
+    }
+    speakingSection.hidden = false;
+    speakingPhraseList.innerHTML = "";
+    speaking.phrases.forEach((p) => {
+      const item = document.createElement("div");
+      item.className = "speaking-phrase";
+
+      const zhEl = document.createElement("div");
+      zhEl.className = "speaking-phrase-zh";
+      setZh(zhEl, p.zh);
+
+      const enEl = document.createElement("div");
+      enEl.className = "speaking-phrase-en";
+      setEn(enEl, p.en);
+
+      const noteEl = document.createElement("div");
+      noteEl.className = "speaking-note";
+      setZh(noteEl, p.note);
+
+      const noteEnEl = document.createElement("div");
+      noteEnEl.className = "vocab-meaning-en";
+      setEn(noteEnEl, p.noteEn);
+
+      item.appendChild(zhEl);
+      item.appendChild(enEl);
+      item.appendChild(noteEl);
+      item.appendChild(noteEnEl);
+      speakingPhraseList.appendChild(item);
+    });
+    roleplayList.innerHTML = "";
+    speaking.rolePlay.forEach((q) => {
+      const li = document.createElement("li");
+      const zhEl = document.createElement("div");
+      zhEl.className = "question-zh";
+      setZh(zhEl, q.zh);
+      const enEl = document.createElement("div");
+      enEl.className = "question-en";
+      setEn(enEl, q.en);
+      li.appendChild(zhEl);
+      li.appendChild(enEl);
+      roleplayList.appendChild(li);
+    });
   }
 
   // ---------- 看圖說故事 ----------
